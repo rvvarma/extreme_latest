@@ -61,7 +61,7 @@ this.hash[this.stu[i].studentid]="Present"
   this.httpService.get('../assets/config/IPconfig.json').subscribe(
          data => {
            this.arrBirds = data as string [];	 // FILL THE ARRAY WITH DATA.
-           this.id = this.getCookie("id");
+           this.id = this.getCookie("Id");
 
             var url=this.arrBirds.IP +":"+this.arrBirds.port+"/users1/class"+"/"+this.id
             console.log(url)
@@ -72,7 +72,7 @@ this.hash[this.stu[i].studentid]="Present"
 
 
 
-        console.log("cookie "+this.getCookie("id"));
+        console.log("cookie "+this.getCookie("Id"));
 
     this.http.get(url).subscribe(
       (res:Response) =>{
@@ -133,7 +133,7 @@ this.hash[this.stu[i].studentid]="Present"
            /*this._cookieService.put("section",this.cccc1);*/
            alert ("are you sure to dispaly the pie chart!");
 
-           this.router.navigate(['/percentage']);
+           this.router.navigate(['/teacherdashboard/percentage']);
 
 
 
@@ -167,4 +167,7 @@ this.hash[this.stu[i].studentid]="Present"
 
 }
 
+getCookie(key:string){
+    return this._cookieService.get(key);
+  }
 }

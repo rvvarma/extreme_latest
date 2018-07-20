@@ -173,9 +173,10 @@ path: 'teacherdashboard',
 
             path: 'fetchteacherclass',component: FetchTeacherClassComponent
          },
-         {
-           path:'percentage', component:PercentageviewComponent
-         },
+
+                               {
+                                 path:'percentage', component:PercentageviewComponent
+                               },
 
       ]
       {

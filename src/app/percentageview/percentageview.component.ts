@@ -100,7 +100,7 @@ pieChartLabels =  ['Present', 'Absent', 'Leaves'];
 
           var url=this.arrBirds.IP +":"+this.arrBirds.port+"/classesconfig"
           console.log(url)
-          console.log("cookie 1"+this.getCookie("id"));
+          console.log("cookie 1"+this.getCookie("Id"));
           this.id=this.getCookie("tid");
           var a1=JSON.parse(this.getCookie("attendance"));
 

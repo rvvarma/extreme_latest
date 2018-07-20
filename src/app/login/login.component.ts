@@ -24,8 +24,13 @@ export class LoginComponent implements OnInit {
           if(!data)
           alert("invalid credentials")
           else{
-          console.log(data.type)
+          var t=data.Id
+          //this._cookieService.put("Id",t)
+          this._cookieService.put("Id", t);
+
           this.Id = this.getCookie("Id");
+
+          console.log(this.Id)
           this.School_Id = this.getCookie("School_Id");
           if(data.type=="Parent")
           {
