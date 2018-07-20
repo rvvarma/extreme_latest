@@ -1,0 +1,65 @@
+
+
+<form  #Data = "ngForm" (ngSubmit) = "onSubmit(Data.value)">
+  <div class="row">
+          <div class="col-50">
+
+<label>CLASS:</label>
+
+  <select (change)="fetchsection($event.target.value)" name="Class" id="class" ngModel="classes" >
+      <option value="0">CLASSES</option>
+      <option *ngFor="let cla of student" value={{cla}}>
+          {{cla}}
+      </option>
+  </select>&nbsp;
+
+
+  <label>SECTION:</label>
+  <select (change)="fetchsubject($event.target.value)" name="Section" id="section" ngModel="sections">
+      <option value="0">SECTIONS</option>
+      <option *ngFor="let sec of section" value={{sec}} >
+          {{sec}}
+      </option>
+  </select>&nbsp;
+
+
+  <label>title:</label>
+
+</div>
+
+  <div class="col-50">
+
+  <label for="subject">SUBJECTS:</label>
+  <select  (change)="fetchsubject($event.target.value)" name="Subjects" ngModel="subjects" id="subject">
+      <option value="0">SUBJECTS</option>
+      <option *ngFor="let Sub of subject" value={{Sub}} >
+          {{Sub}}
+      </option>
+  </select><br>
+
+
+  <input  type="text"  name="t1" id="title" ngModel><br>
+  <label>description:</label>
+  <textarea ng-model="myTextarea"  name="des" id="description" ngModel></textarea><br>
+
+
+  <div>
+      <div>
+          <label for="filePicker">Choose a file:</label><br>
+          <input type="file" id="filePicker" (change)="handleFileSelect($event)" name="file"  accept="image/jpeg" ngModel>
+      </div>
+      <br>
+
+  </div>
+
+
+
+
+  <button type="button" type="submit" value="submit" class="btn btn-dark">Submit
+
+
+
+</button>
+</div>
+</div>
+</form>

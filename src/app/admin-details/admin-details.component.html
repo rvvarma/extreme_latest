@@ -1,0 +1,32 @@
+<form #f = "ngForm" (ngSubmit) = "onSubmit(f.value)" >
+  School Name:<input type="text" name="School_Name"  ngModel><br><br>
+  School Id:<input type="text" name="School_Id"  ngModel><br><br>
+  First Name:<input type="text" name="First_Name"  ngModel><br><br>
+  Last Name:<input type="text" name="Last_Name"  ngModel><br><br>
+    <label>Gender</label>
+      <label>
+      <input type="radio" value="male" name="gender" ngModel>
+      Male
+      </label>
+      <label>
+      <input type="radio" value="female" name="gender"  ngModel>
+       Female
+     </label><br>
+
+  <div class="form-group">
+    <label for="dateOfBirth">Date of Birth</label>
+    <input id="dateOfBirth" name="dateOfBirth" [(ngModel)]="dateOfBirth"
+    type="date" class="form-control">
+  </div><br>
+  Age:<input type="text" name="Age"  ngModel><br><br>
+  Qualification:<input type="text" name="Qualification"  ngModel><br><br>
+  Experience:<input type="text" name="Experience"  ngModel><br><br>
+  Address:<input type="text" name="Address"  ngModel><br><br>
+  City:<input type="text" name="City"  ngModel><br><br>
+  Phone Number:<input type="text" name="Phone_Number"  ngModel><br><br>
+  Pin Code:<input type="text" name="Pin_Code"  ngModel><br><br>
+  Email id:<input type="text" name="Email_id"  ngModel><br><br>
+
+
+<button type="submit"name="submit">Save</button>
+</form>

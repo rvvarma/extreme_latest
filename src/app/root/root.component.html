@@ -1,0 +1,59 @@
+
+
+<ol class="breadcrumb">
+
+  <li class="breadcrumb-item active">Class Details</li>
+</ol>
+
+<div class="content">
+
+
+  <H2> Class Details </H2>
+
+
+
+
+<label>CLASS </label>
+  <select  name="Class" id="class" ngModel >
+      <option value="0">CLASSES</option>
+      <option *ngFor="let classes of teacher" value={{classes.Class}}>
+          {{classes.Class}}
+      </option>
+  </select><br>
+
+
+  <label>SECTION</label>
+  <select (change)="fetchsubjects($event.target.value)" name="Section" id="section" ngModel>
+      <option value="0">SECTIONS</option>
+      <option *ngFor="let sections of teacher" value={{sections.Section}}>
+          {{sections.Section}}
+      </option>
+  </select><br>
+
+
+
+
+  <button (click)="openCity('class','section');">TEACHER DETAILS</button>
+  <button  (click)="openLock('class','section');">STUDENT LIST</button>
+  <table>
+    <tr>
+      <th>TEACHER NAME</th>
+
+    </tr>
+    <tr *ngFor="let teachers of tea"  >
+
+      <td >{{teachers.Teacher_Name}}</td>
+      </tr>
+
+  </table>
+  <table>
+    <tr>
+      <th>STUDENT ID</th>
+    </tr>
+    <tr *ngFor="let teachers of stu"  >
+
+      <td >{{teachers.studentid}}</td>
+      </tr>
+
+  </table>
+</div>

@@ -1,0 +1,41 @@
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a [routerLink]="['/admindashboard/createaccount']">Student Registrations </a>
+  </li>
+</ol>
+<div class="total">
+  <h2 >Student Registrations </h2>
+  <div class="row">
+  <div class="col-75">
+      <div class="container">
+
+
+<form #f = "ngForm" (ngSubmit) = "onSubmit(f.value)" >
+
+
+  Student Name:<input id="text " type="text" name="Name"  ngModel>
+
+<label>Parent Type
+  <select name="Parent_type" ngModel>
+      <option value=option>ParentType<option>
+          <option value=Father>Father</option>
+              <option value=Mother>Mother</option>
+      <option value=Guardian>Guardian</option>
+     </select>
+</label><br><br>
+
+Parent Name:<input type="text" id="text " name="Parent_Name"  ngModel>
+  Phone Number:<input type="text" id="text " name="Phone_Number"  ngModel>
+  Mail id:<input type="text" id="text " name="Mailid"  ngModel>
+
+
+
+
+
+  <button type="submit"name="submit">Submit</button>
+
+  </form>
+</div>
+
+ </div>
+</div>

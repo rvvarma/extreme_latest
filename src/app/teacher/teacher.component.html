@@ -1,0 +1,165 @@
+
+
+
+<div class="container">
+  <h2> Teacher Registration </h2>
+
+
+
+<form class="form-horizontal" [formGroup]="form">
+
+  <div class="row">
+          <div class="col-50">
+<div class="col-md-12 col-md-offset-3">
+
+  <div class="form-group" [ngClass]="displayFieldCss('name')">
+    <div class="col-sm-4">
+      <label for="name" class="control-label required">First Name</label>
+    <input type="text" id="name" class="form-control" formControlName="name" >
+      <app-field-error-display [displayError]="isFieldValid('name')" errorMsg="Please inform First Name">
+      </app-field-error-display>
+    </div>
+  </div>
+
+
+    <div class="form-group" [ngClass]="displayFieldCss('email')">
+      <div class="col-sm-4">
+        <label for="email" class="control-label required">Email</label>
+      <input type="text" id="email" class="form-control" formControlName="email">
+        <app-field-error-display [displayError]="isFieldValid('email')" errorMsg="Please inform Email">
+        </app-field-error-display>
+      </div>
+    </div>
+
+
+        <div class="form-group" [ngClass]="displayFieldCss('lastname')">
+          <div class="col-sm-4">
+            <label for="lastname" class="control-label required">Last Name</label>
+          <input type="text" id="lastname" class="form-control" formControlName="lastname">
+            <app-field-error-display [displayError]="isFieldValid('lastname')" errorMsg="Please inform Last Name">
+            </app-field-error-display>
+          </div>
+        </div>
+
+
+                <div class="form-group" [ngClass]="displayFieldCss('Qualification')">
+                  <div class="col-sm-4">
+                    <label for="Qualification" class="control-label required">Qualification</label>
+                  <input type="text" id="Qualification" class="form-control" formControlName="Qualification">
+                    <app-field-error-display [displayError]="isFieldValid('Qualification')" errorMsg="Please inform Qualification ">
+                    </app-field-error-display>
+                  </div>
+                </div>
+
+
+                                <div class="form-group" [ngClass]="displayFieldCss('package')">
+                                  <div class="col-sm-4">
+                                    <label for="package" class="control-label required">Package</label>
+                                  <input type="text" id="package" class="form-control" formControlName="package">
+                                    <app-field-error-display [displayError]="isFieldValid('package')" errorMsg="Please inform Package ">
+                                    </app-field-error-display>
+                                  </div>
+                                </div>
+
+                              </div >
+                            </div>
+                                        <div class="col-50">
+
+                        <div class="form-group" [ngClass]="displayFieldCss('teachingsubject')">
+                      <div class="col-sm-4">
+                    <label for="teachingsubject" class="control-label required">Teaching Subject</label>
+                  <input type="text" id="teachingsubject" class="form-control" formControlName="teachingsubject">
+                    <app-field-error-display [displayError]="isFieldValid('teachingsubject')" errorMsg="Please inform Teaching Subject ">
+                    </app-field-error-display>
+                    </div>
+                    </div>
+
+
+
+                            <div class="form-group" [ngClass]="displayFieldCss('dob')">
+                            <div class="col-sm-4">
+                              <label for="dob" class="control-label required">Date of Birth</label>
+                              <input type="text" id="dob" class="form-control" formControlName="dob">
+                              <app-field-error-display [displayError]="isFieldValid('dob')" errorMsg="Please inform Date of Birth ">
+                              </app-field-error-display>
+                              </div>
+                              </div>
+
+
+                           <div class="form-group">
+
+                               <div class="col-md-4" [ngClass]="displayFieldCss('Address')">
+                               <label for="Address" class="control-label required">Address</label>
+                                   <input type="text" id="Address" class="form-control" formControlName="Address">
+                                 <app-field-error-display [displayError]="isFieldValid('Address')" errorMsg="Please inform other Address">
+                                     </app-field-error-display>
+                                   </div>
+
+                                    </div>
+
+
+                                      <div class="form-group">
+
+                                     <div class="col-md-4" [ngClass]="displayFieldCss('phone_number')">
+                                    <label for="phone_number" class="control-label required">Phone Number</label>
+                              <input type="text" id="phone_number" class="form-control" formControlName="phone_number">
+                              <app-field-error-display [displayError]="isFieldValid('phone_number')" errorMsg="Please inform Phone Number">
+                            </app-field-error-display>
+                            </div>
+
+                          </div>
+
+
+                                                                <div class="form-group">
+
+                                                               <div class="col-md-4" [ngClass]="displayFieldCss('experience')">
+                                                              <label for="experience" class="control-label required">Experience</label>
+                                                        <input type="text" id="experience" class="form-control" formControlName="experience">
+                                                        <app-field-error-display [displayError]="isFieldValid('experience')" errorMsg="Please inform Experience">
+                                                      </app-field-error-display>
+                                                      </div>
+
+                                                    </div>
+
+
+
+
+
+
+
+
+  <div formGroupName="address">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</div>
+</div>
+<div clas='col-75'>
+  <button class="btn btn-primary" (click)="onSubmit()">Submit</button>
+  <button class="btn-red" (click)="reset()">Reset</button>
+</div>
+
+</form>

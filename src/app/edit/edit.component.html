@@ -1,0 +1,88 @@
+
+
+
+
+<form #data="ngForm" (ngSubmit)="onSubmit(data.value)" >
+  <label>TERMS</label>
+
+  <select  name="TERMS" [(ngModel)]="sub" >
+    <option *ngFor="let sections of terms" value={{sections}}>
+        {{sections}}
+    </option>
+</select>
+  FEE:<input type="text" value="s" name="fee" [(ngModel)]="s" >
+
+  STUDENT LIMIT:<input type="text" name="studentlimit" [(ngModel)]="l" >
+  <!--<label>SECTION</label>
+  <select  name="Section" [(ngModel)]="c" >
+      <option *ngFor="let sections of section" >
+          {{sections.sections}}
+      </option>
+  </select>
+
+
+  <label>SUBJECT</label>
+  <select  name="Subject" [(ngModel)]="d">
+      <option *ngFor="let sections of subjects" value={{sections}}>
+          {{sections}}
+      </option>
+  </select>
+
+-->
+<!--<div id='G'>
+        <div id="D">
+     SECTION:<input type="text" value="section"  name="sections" [(ngModel)]="c" ><BR></div>
+     </div><input type='button' value='Add Section' id='addButton'>
+     <input type='button' value='Remove Section' id='removeButton'><BR>
+
+
+
+
+     <div id='SG'>
+        <div id="SD">
+     SUBJECT:<input type="text" value="subjects"  name="subjects" [(ngModel)]="d" ><br></div>
+     </div><input type='button' value='Add Subject' id='addButton'>
+     <input type='button' value='Remove Subject' id='removeButton'>-->
+     <table id="tableid" >
+       <tr>
+            <th>sections</th>
+            <th>DELETE</th>
+
+
+
+       </tr>                <button class="btn btn-default" type="button" (click)="addFieldValue()">Add</button>
+
+       <tr *ngFor="let teachers of section" let i = index >
+
+        <td><input type="text" value="{{this.teachers}}" name="sections" id="sections"> </td>
+        <td>
+            <button class="btn btn-default"  type="button"  (click)="deleteFieldValue(i)">Delete</button>
+        </td>
+</tr>
+
+
+     </table>
+     <table id="tableid" >
+            <tr>
+                 <th>SUBJECTS</th>
+                 <th>DELETE</th>
+
+
+
+            </tr>                <button class="btn btn-default" type="button" (click)="addFieldValues()">Add</button>
+
+            <tr *ngFor="let teachers of subjects" let i = index >
+
+             <td><input type="text" value="{{this.teachers}}" name="subjects" id="subjects"> </td>
+             <td>
+                 <button class="btn btn-default"  type="button" (click)="deleteFieldValues(i)">Delete</button>
+             </td>
+     </tr>
+
+
+          </table>
+
+<input type="submit" value="update" >
+
+ </form>
+ 

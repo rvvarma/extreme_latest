@@ -1,0 +1,47 @@
+<div class="total">
+<h2 >School Name </h2>
+</div>
+
+<form #f = "ngForm" (ngSubmit) = "onClickSubmit(f.value)" >
+
+
+<select (change)="fetchClass($event.target.value)" id="class">
+<option value=0>Class<option>
+  <option *ngFor ="let c of Class" value="{{c}}">
+    {{c}}
+  </option>
+</select>
+
+</form>
+
+
+
+<form id = "formNewProduct" name = "formNewProduct" #ProdutData = "ngForm" (ngSubmit) = "onSubmit(ProdutData.value)">
+
+
+  <div class="grid-container">
+<div *ngFor ="let st of stu" >
+
+
+
+
+      <div> <img src="../assets/img2.png">
+        <p>{{st.studentid}}</p>
+
+
+<label>
+ <input type="checkbox" value="Present" name="attendance" id="check"   (change)=onSub($event,st.studentid) checked >
+Present</label>&nbsp;
+
+      </div>
+
+
+
+
+
+</div>
+</div>
+
+
+<button (click)="percentage()"   [routerLink]="['/teacherdashboard/percentage']">percentage</button>
+<form>

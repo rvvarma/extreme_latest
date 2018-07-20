@@ -1,0 +1,72 @@
+
+
+body {
+  height: 100px;
+  width:100px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:10px;
+}
+form {border: 3px solid #2db577;
+}
+
+.h{
+   font-size:48px;
+color: 		#016DD2;
+  font-weight: bold;
+  margin-top:50px;
+  text-align: center;
+}
+.total{
+  background-color:#2db577;
+margin-left:200px;
+}
+.column {
+  float:left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 0%;
+  padding-right: 200px;
+}
+
+#customers td, #customers th {
+  border: 1px solid #000;
+  padding: 2px;
+}
+
+
+#customers tr:hover {background-color: #ddd;}
+#customers tr
+{
+  background-color: #f2f2f2;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 19px;
+  background-color:	#19B8D7;
+  color: white;
+}
+.student{
+  padding-left:100px;
+
+  margin-left:150px;
+
+}

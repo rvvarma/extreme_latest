@@ -1,0 +1,35 @@
+<table color='blue'>
+  <thead>
+
+
+    <th>teacherid</th>
+    <th>class</th>
+    <th>section</th>
+   <th>subject</th>
+   <th>title</th>
+   <th>description</th>
+   <th>filetype</th>
+   <th>date</th>
+  <th>filedownload</th>
+
+
+ </thead>
+
+<tbody>
+<tr *ngFor ="let a of sub" >
+
+
+  <td>{{a.teacherid}}</td>
+  <td>{{a.class}}</td>
+  <td>{{a.section}}</td>
+  <td>{{a.subject}}</td>
+  <td>{{a.description}}</td>
+  <td>{{a.title}}</td>
+  <td>{{a.filetype}}</td>
+  <td>{{a.date}}</td>
+  <td><button class="btn btn-primary" (click)="downloadFile(a.id)">Download</button>
+ </td>
+
+  </tr>
+</tbody>
+</table>

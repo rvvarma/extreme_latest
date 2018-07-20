@@ -1,0 +1,97 @@
+
+<div class="container">
+  <h2 >Student Registrations </h2>
+
+
+<form class="form-horizontal" [formGroup]="form">
+
+    <div class="row">
+            <div class="col-50">
+
+              <div class=" col-md-offset-2">
+
+
+  <div class="form-group" [ngClass]="displayFieldCss('std')">
+    <div class="col-sm-3  ">
+      <label for="std" >Student ID</label>
+      <input type="text" id="std" class="form-control" formControlName="std">
+      <app-field-error-display [displayError]="isFieldValid('std')" errorMsg="Please inform Student ID">
+      </app-field-error-display>
+    </div>
+  </div>
+
+
+
+    <div class="form-group">
+
+      <div class="col-md-3  " [ngClass]="displayFieldCss('name')">
+        <label for="name" > Name</label>
+        <input type="text" id="name" class="form-control" formControlName="name">
+        <app-field-error-display [displayError]="isFieldValid('name')" errorMsg="Please inform Parent Name">
+        </app-field-error-display>
+      </div>
+    </div>
+    <div class="form-group" [ngClass]="displayFieldCss('parent')">
+
+    <div class="col-sm-3  ">
+
+      <label for="parent" >Parent Type</label>
+
+
+
+                         <select name="Parent_type" id="parent" class="form-control" formControlName="parent"ngModel>
+                             <option value=option>ParentType<option>
+                                 <option value=Father>Father</option>
+                                     <option value=Mother>Mother</option>
+                             <option value=Guardian>Guardian</option>
+                            </select>
+
+                            <app-field-error-display [displayError]="isFieldValid('parent')" errorMsg="Select Parent Type">
+                            </app-field-error-display>
+
+                     </div>
+                   </div>
+
+
+                 </div >  </div>
+
+                             <div class="col-50">
+
+  <div class="form-group" [ngClass]="displayFieldCss('email')">
+    <div class="col-sm-3  ">
+      <label for="email" >email ID</label>
+      <input type="text" id="email" class="form-control" formControlName="email">
+      <app-field-error-display [displayError]="isFieldValid('email')" errorMsg="Please inform email ID">
+      </app-field-error-display>
+    </div>
+  </div>
+
+  <div class="form-group" [ngClass]="displayFieldCss('parent_name')">
+    <div class="col-sm-3  ">
+      <label for="parent_name" >Parent Name</label>
+      <input type="text" id="parent_name" class="form-control" formControlName="parent_name">
+      <app-field-error-display [displayError]="isFieldValid('parent_name')" errorMsg="Please inform email ID">
+      </app-field-error-display>
+    </div>
+  </div>
+
+  <div class="form-group " [ngClass]="displayFieldCss('phone_number')">
+    <div class="col-sm-3  ">
+      <label for="phone_number" >Phone Number</label>
+      <input type="text" id="phone_number" class="form-control" formControlName="phone_number">
+      <app-field-error-display [displayError]="isFieldValid('phone_number')" errorMsg="Please inform Phone Number">
+      </app-field-error-display>
+    </div>
+  </div>
+
+
+</div>
+</div>
+
+  <button class="btn btn-default" (click)="onSubmit()">Submit</button>
+  <button  class="btn-red" (click)="reset()">Reset</button>
+
+
+
+</form>
+</div>

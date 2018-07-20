@@ -1,0 +1,50 @@
+
+
+<head>
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+
+</head>
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a [routerLink]="['/admindashboard/first']">School Configuration</a>
+  </li>
+  <li class="breadcrumb-item active">New Configuration</li>
+</ol>
+<form #data="ngForm" (ngSubmit)="onSubmit(data.value)" class="formclass">
+
+  Class:<input type="text" name="classname" id="classid" ngModel><br>
+
+  <div id='TextBoxesG'>
+    <div id="TextBoxD">
+      <label>Section 1 : </label><input type="text" name="sections" id="textbox2" ngModel>
+
+    </div>
+  </div><input type='button' value='Add Sections' id='addsections'>
+  <input type='button' value='Remove Sections' id='removesections'>
+  <br>
+  <div id='TextBoxesGroup'>
+    <div id="TextBoxDiv1">
+      <label>Subject 1 : </label><input type="text" name="subjects" id="textbox1" ngModel>
+
+    </div>
+  </div>
+  <input type='button' value='Add Subject' id='addButton'>
+  <input type='button' value='Remove Subject' id='removeButton'>
+  <br>
+  StudentLimit:<input type="text" name="studentlimit" id="limitid" ngModel><br>
+
+  <div id='TextBoxesGroup2'>
+    <div id="TextBoxDiv2">
+      <label>Terms : </label><input type="text" name="terms" id="textbox3" ngModel>
+
+    </div>
+  </div>
+  <input type='button' value='Add Terms' id='addterms'>
+  <input type='button' value='Remove Terms' id='removeterms'><br>
+  fee:<input type="text" name="fee" id="feeid" ngModel><br>
+  <input type="submit" value="Submit" >
+
+</form>

@@ -1,0 +1,493 @@
+<!doctype html>
+<app-root>
+  <style>
+  app-root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    color: pink;
+    text-transform: uppercase;
+    font-family: -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Oxygen-Sans,
+        Ubuntu,
+        Cantarell,
+        Helvetica,
+        sans-serif;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+  }
+  body {
+    background: salmon;
+    margin: 0;
+    padding: 0;
+  }
+
+  @keyframes dots {
+    50% {
+      transform: translateY(-.4rem);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  .d {
+    animation: dots 1.5s ease-out infinite;
+  }
+  .d-2 {
+    animation-delay: .5s;
+  }
+  .d-3 {
+    animation-delay: 1s;
+  }
+  </style>
+
+  Loading<span class="d">.</span><span class="d d-2">.</span><span class="d d-3">.</span>
+</app-root>
+<html lang="en">
+<head>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  <meta charset="utf-8">
+
+
+
+
+  <base href="/">
+  <!-- Bootstrap core CSS     -->
+  <link href="./assets/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!--  Paper Dashboard core CSS    -->
+  <link href="./assets/css/paper-dashboard.css" rel="stylesheet"/>
+
+  <!--  CSS for Demo Purpose, don't include it in your project     -->
+  <link href="./assets/css/demo.css" rel="stylesheet" />
+
+
+  <!--  Fonts and icons     -->
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
+  <link href="./assets/css/themify-icons.css" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+
+<script>
+
+  window.onscroll = function() {myFunction()};
+
+  var navbar = document.getElementById("navbar");
+  var sticky = navbar.offsetTop;
+
+  function myFunction() {
+    if (window.pageYOffset >= sticky) {
+      navbar.classList.add("sticky")
+    } else {
+      navbar.classList.remove("sticky");
+    }
+  }
+</script>
+
+<script>
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+</script>
+
+
+
+
+
+
+<script>
+
+
+$(function() {
+
+   $(".input input").focus(function() {
+
+      $(this).parent(".input").each(function() {
+         $("label", this).css({
+            "line-height": "18px",
+            "font-size": "18px",
+            "font-weight": "100",
+            "top": "0px"
+         })
+         $(".spin", this).css({
+            "width": "100%"
+         })
+      });
+   }).blur(function() {
+      $(".spin").css({
+         "width": "0px"
+      })
+      if ($(this).val() == "") {
+         $(this).parent(".input").each(function() {
+            $("label", this).css({
+               "line-height": "60px",
+               "font-size": "24px",
+               "font-weight": "300",
+               "top": "10px"
+            })
+         });
+
+      }
+   });
+
+   $(".button").click(function(e) {
+      var pX = e.pageX,
+         pY = e.pageY,
+         oX = parseInt($(this).offset().left),
+         oY = parseInt($(this).offset().top);
+
+      $(this).append('<span class="click-efect x-' + oX + ' y-' + oY + '" style="margin-left:' + (pX - oX) + 'px;margin-top:' + (pY - oY) + 'px;"></span>')
+      $('.x-' + oX + '.y-' + oY + '').animate({
+         "width": "500px",
+         "height": "500px",
+         "top": "-250px",
+         "left": "-250px",
+
+      }, 600);
+      $("button", this).addClass('active');
+   })
+
+   $(".alt-2").click(function() {
+      if (!$(this).hasClass('material-button')) {
+         $(".shape").css({
+            "width": "100%",
+            "height": "100%",
+            "transform": "rotate(0deg)"
+         })
+
+         setTimeout(function() {
+            $(".overbox").css({
+               "overflow": "initial"
+            })
+         }, 600)
+
+         $(this).animate({
+            "width": "140px",
+            "height": "140px"
+         }, 500, function() {
+            $(".box").removeClass("back");
+
+            $(this).removeClass('active')
+         });
+
+         $(".overbox .title").fadeOut(300);
+         $(".overbox .input").fadeOut(300);
+         $(".overbox .button").fadeOut(300);
+
+         $(".alt-2").addClass('material-buton');
+      }
+
+   })
+
+   $(".material-button").click(function() {
+
+      if ($(this).hasClass('material-button')) {
+         setTimeout(function() {
+            $(".overbox").css({
+               "overflow": "hidden"
+            })
+            $(".box").addClass("back");
+         }, 200)
+         $(this).addClass('active').animate({
+            "width": "700px",
+            "height": "700px"
+         });
+
+         setTimeout(function() {
+            $(".shape").css({
+               "width": "50%",
+               "height": "50%",
+               "transform": "rotate(45deg)"
+            })
+
+            $(".overbox .title").fadeIn(300);
+            $(".overbox .input").fadeIn(300);
+            $(".overbox .button").fadeIn(300);
+         }, 700)
+
+         $(this).removeClass('material-button');
+
+      }
+
+      if ($(".alt-2").hasClass('material-buton')) {
+         $(".alt-2").removeClass('material-buton');
+         $(".alt-2").addClass('material-button');
+      }
+
+   });
+
+});
+</script>
+<script type="text/javascript">
+
+    $(document).ready(function(){
+
+        var counter = 2;
+
+        $("#addButton").click(function () {
+
+        if(counter>10){
+                alert("Only 10 textboxes allow");
+                return false;
+        }
+
+        var newTextBoxDiv = $(document.createElement('div'))
+             .attr("id", 'TextBoxDiv' + counter);
+
+        newTextBoxDiv.after().html('<label>Subject '+ counter + ' : </label>' +
+              '<input type="text" name="textbox' +
+              '" id="textbox' + '" value="" >');
+
+        newTextBoxDiv.appendTo("#TextBoxesGroup");
+
+
+        counter++;
+         });
+
+         $("#removeButton").click(function () {
+        if(counter==1){
+              alert("No more textbox to remove");
+              return false;
+           }
+
+        counter--;
+
+            $("#TextBoxDiv" + counter).remove();
+
+         });
+
+         $("#getButtonValue").click(function () {
+
+        var msg = '';
+        for(i=1; i<counter; i++){
+             msg += "\n Textbox #" + i + " : " + $('#textbox' + i).val();
+        }
+              alert(msg);
+         });
+      });
+    </script>
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+
+            var counter = 2;
+
+            $("#addButton").click(function () {
+
+            if(counter>10){
+                    alert("Only 10 textboxes allow");
+                    return false;
+            }
+
+            var newTextBoxDiv = $(document.createElement('div'))
+                 .attr("id", 'D' + counter);
+
+            newTextBoxDiv.after().html('<label>Subject '+ counter + ' : </label>' +
+                  '<input type="text" name="textbox' +
+                  '" id="textbox' + '" value="" >');
+
+            newTextBoxDiv.appendTo("#G");
+
+
+            counter++;
+             });
+
+             $("#removeButton").click(function () {
+            if(counter==1){
+                  alert("No more textbox to remove");
+                  return false;
+               }
+
+            counter--;
+
+                $("#D" + counter).remove();
+
+             });
+
+             $("#getButtonValue").click(function () {
+
+            var msg = '';
+            for(i=1; i<counter; i++){
+                 msg += "\n Textbox #" + i + " : " + $('#textbox' + i).val();
+            }
+                  alert(msg);
+             });
+          });
+        </script>
+       <!-- =============================================================SUBJECTS================================= -->
+<script type="text/javascript">
+
+            $(document).ready(function(){
+
+                var counter = 2;
+
+                $("#addButton").click(function () {
+
+                if(counter>10){
+                        alert("Only 10 textboxes allow");
+                        return false;
+                }
+
+                var newTextBoxDiv = $(document.createElement('div'))
+                     .attr("id", 'SD' + counter);
+
+                newTextBoxDiv.after().html('<label>Subject '+ counter + ' : </label>' +
+                      '<input type="text" name="textbox' +
+                      '" id="textbox' + '" value="" >');
+
+                newTextBoxDiv.appendTo("#SG");
+
+
+                counter++;
+                 });
+
+                 $("#removeButton").click(function () {
+                if(counter==1){
+                      alert("No more textbox to remove");
+                      return false;
+                   }
+
+                counter--;
+
+                    $("#SD" + counter).remove();
+
+                 });
+
+                 $("#getButtonValue").click(function () {
+
+                var msg = '';
+                for(i=1; i<counter; i++){
+                     msg += "\n Textbox #" + i + " : " + $('#textbox' + i).val();
+                }
+                      alert(msg);
+                 });
+              });
+            </script>
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+
+            var counter = 2;
+
+            $("#addsections").click(function () {
+
+            if(counter>10){
+                    alert("Only 10 textboxes allow");
+                    return false;
+            }
+
+            var newTextBoxDiv = $(document.createElement('div'))
+                 .attr("id", 'TextBoxD' + counter);
+
+            newTextBoxDiv.after().html('<label>Section '+ counter + ' : </label>' +
+                  '<input type="text" name="textboxs' +
+                  '" id="textbox' + '" value="" >');
+
+            newTextBoxDiv.appendTo("#TextBoxesG");
+
+
+            counter++;
+             });
+
+             $("#removesections").click(function () {
+            if(counter==1){
+                  alert("No more textbox to remove");
+                  return false;
+               }
+
+            counter--;
+
+                $("#TextBoxD" + counter).remove();
+
+             });
+
+             $("#getButtonValue").click(function () {
+
+            var msg = '';
+            for(i=1; i<counter; i++){
+                 msg += "\n Textbox #" + i + " : " + $('#textbox' + i).val();
+            }
+                  alert(msg);
+             });
+          });
+        </script>
+
+  <script type="text/javascript">
+
+    $(document).ready(function(){
+
+        var counter = 2;
+
+        $("#addterms").click(function () {
+
+        if(counter>10){
+                alert("Only 10 textboxes allow");
+                return false;
+        }
+
+        var newTextBoxDiv = $(document.createElement('div'))
+             .attr("id", 'TextBoxDiv2' + counter);
+
+        newTextBoxDiv.after().html('<label>Term '+ counter + ' : </label>' +
+              '<input type="text" name="textbox3' +
+              '" id="textbox3' + '" value="" >');
+
+        newTextBoxDiv.appendTo("#TextBoxesGroup2");
+
+
+        counter++;
+         });
+
+         $("#removeterms").click(function () {
+        if(counter==1){
+              alert("No more textbox to remove");
+              return false;
+           }
+
+        counter--;
+
+            $("#TextBoxDiv2" + counter).remove();
+
+         });
+
+
+      });
+    </script>
+
+
+
+
+</head>
+<body >
+
+  <app-root></app-root>
+
+</body>
+</html>

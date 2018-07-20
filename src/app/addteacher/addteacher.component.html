@@ -1,0 +1,148 @@
+
+
+  <style>
+
+
+.add{
+padding-top: 10px;
+  font-size:25px;
+
+    padding-left:250px;
+
+    margin-left:150px;
+    font-size:25px;
+    font-weight: bold;
+
+
+
+
+}
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+}
+
+</style>
+<style>
+
+
+        H1{
+          text-align: center;
+          font-size: 35px;
+          font-weight: bolder;
+
+
+        }
+
+        </style>
+
+<body>
+
+  <div class="containers">
+
+  <h2 > Add New  Teacher   </h2>
+  <form  #data="ngForm" (ngSubmit)="onSubmit(data.value)">
+
+
+      <div class="row">
+              <div class="col-50">
+                <div class="col-md-12 col-md-offset-3">
+
+          <label>  SCHOOL ID:</label>
+<br>
+          <input type="text" name="School_Id"  ngModel>
+<br>
+    <label>TEACHER ID </label>
+<br>
+    <select  (change)="fetchclass($event.target.value)"  name="Teacher_Id" ngModel >
+            <option value="0" ></option>
+            <option *ngFor="let classes of teacherid" value={{classes.Teacher_Id}} >
+                {{classes.Teacher_Id}}
+            </option>
+        </select><br>
+
+
+
+
+
+    <label>CLASS </label>
+<br>
+  <select (change)="fetchsection($event.target.value)" name="Class" id="class" ngModel >
+      <option value="0">CLASSES</option>
+      <option *ngFor="let classes of class" value={{classes.classes.classname}}>
+          {{classes.classes.classname}}
+      </option>
+  </select><br>
+
+
+
+</div>
+</div>
+            <div class="col-50">
+  <label>SECTION</label>
+<br>
+  <select (change)="fetchsubjects($event.target.value)" name="Section" ngModel>
+      <option value="0">SECTIONS</option>
+      <option *ngFor="let sections of section" value={{sections}}>
+          {{sections}}
+      </option>
+  </select><br>
+
+
+
+
+  <label>SUBJECT</label>
+<br>
+  <select  name="Subject" ngModel>
+      <option value="0">Subject</option>
+      <option *ngFor="let sec of subjects" value={{sec}}>
+          {{sec}}
+      </option>
+  </select><BR>
+
+
+
+<label>TEACHER TYPE:</label>
+<br>
+<input type="text" name="Teacher_Type" ngModel><br>
+</div>  </div>
+
+<br>
+<div class="col-md-12 col-md-offset-4">
+
+    <input class="btn" type="submit" value="ADD TEACHER" >
+    </div>
+
+    </form>
+    <table id="customers"  class="container">
+
+        <tr>
+     <th>School_Id</th>
+     <th>Teacher_Id</th>
+        <th>Class</th>
+        <th>Section</th>
+        <th>Subject</th>
+
+        <th>EDIT</th></tr>
+ <tr *ngFor="let teachers of teacher"  >
+ <td>{{teachers.School_Id}} </td>
+
+ <td>{{teachers.Teacher_Id}}</td>
+ <td>{{teachers.Class}}</td>
+ <td>{{teachers.Section}}</td>
+ <td>{{teachers.Subject}}</td>
+
+ <td><a [routerLink]="['/edit', teachers.Teacher_Id]">EDIT</a></td>
+ <!---<td><a href="javascript:void(0)" routerLink="cartoonBoxUrl()" routerLinkActive="active">EDIT</a></td>-->
+
+
+ </tr>
+
+ </table>
+
+</div>
+
+
+
+ </body>

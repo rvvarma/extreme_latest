@@ -1,0 +1,61 @@
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a [routerLink]="['/admindashboard/attendanceforadmin']"> Accounts</a>
+  </li>
+</ol>
+<div class="total ">
+<h2 >Fee details </h2>
+</div>
+<!--enter student id-->
+ <label>Student Id:</label><input type="text" name="stid" id="stid" ngModel ><br><br>
+<button type="submit" name="submit" (click)="submit()">Submit</button><br><br>
+
+<!-- Student details-->
+<label>Student Id:</label><input type="text" name="stid" id="stid" value="{{stu.stid}}" ngModel ><br><br>
+<label>Class:</label><input type="text" name="class" id="class" value="{{stu.class}}" ngModel ><br><br>
+<label>Student Name:</label><input type="text" name="name" id="name" value="{{stu.name}}" ngModel ><br><br>
+<label>Father Name:</label><input type="text" name="fathername" id="fathername" value="{{stu.fathername}}" ngModel ><br>
+<br>
+
+<label>Total Fee:</label><input type="text" name="Total_Fee" id="Total_Fee" value="{{e}}" ngModel ><br><br>
+
+<table id="customers">
+<thead>
+  <th>Fee Paid</th>
+  <th>Date</th>
+  <th>Term</th>
+</thead>
+<tbody>
+  <tr *ngFor="let a of payment">
+  <td>{{a.Amount}}</td>
+  <td>{{a.date}}</td>
+  <td>{{a.Term}}</td>
+</tr>
+</tbody>
+</table>
+<br>
+<br>
+
+
+<label>Total Fee Paid:</label><input type="text" name="Fee_Paid" id="Fee_Paid" value="{{pp[0]}}" ngModel ><br><br>
+<label>Pending Fee:</label><input type="text" name="Pending_Fee" id="Pending_Fee" value="{{ppp[0]}}" ngModel ><br>
+<br>
+<!-- Payment -->
+<p> PAYMENT </p><br>
+ <label>Amount:</label><input type="text" name="Amount" id="Amount" ngModel ><br><br>
+
+ <label>Term:</label><input type="text" name="Term" id="Term" ngModel ><br><br>
+
+ <label>Payment Mode</label>
+    <label>  <input type="checkbox" value="cash" name="payment"id="Payment_Mode" ngModel>  Cash</label>
+
+    <label> <input type="checkbox" value="cheque" name="payment" id="Payment_Mode" ngModel>Cheque</label> <br><br>
+
+          <div class="form-group">
+            <label for="Date">Date</label>
+            <input id="date" name="date" [(ngModel)]="date"
+            type="date" class="form-control">
+          </div><br><br>
+
+
+<button type="submit" name="submit" (click)="onSubmit()" >Payment</button><br><br>

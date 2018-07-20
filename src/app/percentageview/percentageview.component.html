@@ -1,0 +1,44 @@
+<div>
+  <canvas
+      baseChart
+      [chartType]="'pie'"
+      [datasets]="pieChartData"
+      [labels]="pieChartLabels"
+      [options]="pieChartOptions"
+      [legend]="true"
+      [colors]="pieChartColor"
+
+
+  >
+
+
+  </canvas>
+</div>
+
+
+Present:<button class="button5">{{count}}</button>&nbsp;
+Absent:<button class="button6">{{count1}}</button>&nbsp;
+Leaves:<button class="button7">0</button>
+
+<form id = "formNewProduct" name = "formNewProduct" #ProdutData = "ngForm" (ngSubmit) = "onSubmit()" >
+
+
+  <table color='blue'>
+    <thead>
+     <th>studentid</th>
+     <th>status</th>
+
+   </thead>
+
+<tbody>
+  <tr *ngFor ="let a of att" >
+  <td>{{a.stid}}</td>
+    <td>{{a.status}}</td>
+
+  </tr>
+</tbody>
+</table>
+<input type="submit" value="submit">&nbsp;
+
+<a [routerLink]="" (click)="add1()">back</a>
+</form>

@@ -1,0 +1,53 @@
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a [routerLink]="['/admindashboard/createaccount']">Teacher Registrations </a>
+  </li>
+</ol>
+
+<h2>Registration Form</h2>
+<div class="row">
+  <div class="col-75">
+    <div class="container">
+<form #f = "ngForm" (ngSubmit) = "onSubmit(f.value)" >
+  <div class="row">
+          <div class="col-50">
+
+  First Name:<input type="text" name="First_Name"  ngModel><br>
+  Last Name:<input type="text" name="Last_Name"  ngModel><br>
+    <label>Gender</label>
+      <label>
+      <input type="radio" value="male" name="gender" ngModel>
+      Male
+
+      <input type="radio" value="female" name="gender"  ngModel>
+       Female
+     </label><br>
+     Qualification:<input type="text" name="Qualification"  ngModel><br>
+     Package:<input type="text" name="Package"  ngModel><br>
+     Teaching Subject:<input type="text" name="Package"  ngModel><br>
+
+   </div>
+   <div class="col-50">
+
+  <div class="form-group">
+    <label for="dateOfBirth">Date of Birth</label>
+    <input id="dateOfBirth" name="dateOfBirth" [(ngModel)]="dateOfBirth"
+    type="date" class="form-control">
+  </div><br>
+
+  Address:<input type="text" name="Address"  ngModel><br>
+  Phone Number:<input type="text" name="Phone_Number"  ngModel><br>
+  Email id:<input type="text" name="Email_id"  ngModel><br>
+  Experience:<input type="text" name="Experience"  ngModel><br>
+  Previous School:<input type="text" name="Previous_School"  ngModel><br>
+
+
+
+</div>
+</div>
+<button type="submit" class="btn"   name="submit">Save</button>
+</form>

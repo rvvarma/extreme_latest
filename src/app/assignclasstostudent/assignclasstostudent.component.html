@@ -1,0 +1,137 @@
+
+<div class="student">
+
+<h1 class="h"> Assign students   </h1>
+
+
+<label>CLASSES </label>
+<select (change)="fetchsection($event.target.value)" id="class">
+  <option value="0">CLASSES</option>
+  <option *ngFor="let classes of class" value={{classes.classes.classname}}>
+    {{classes.classes.classname}}
+  </option>
+</select>
+
+
+
+<label>SECTIONS</label>
+<select  id="section">
+  <option value="0">SECTIONS</option>
+  <option *ngFor="let sections of section">
+    {{sections}}
+  </option>
+</select>
+
+
+
+
+
+
+
+
+
+
+
+
+
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a routerLink = '/getsection'>  Search</a> &nbsp;&nbsp;&nbsp; <a routerLink = '/getsection/add'> </a>
+
+<input type="text" [(ngModel)]="term">
+
+
+
+
+
+
+<table id="customers">
+
+
+
+
+  <th (click)="sort('stid')">ID
+    <span class="glyphicon sort-icon" *ngIf="key =='stid'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+  </th>
+
+  <th (click)="sort('name')">Name
+    <span class="glyphicon sort-icon" *ngIf="key =='name'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-doName
+        <wn':!reverse}"></span>
+  </th>
+
+
+
+  <th (click)="sort('guardian')">Guardian name
+    <span class="glyphicon sort-icon" *ngIf="key =='fathername'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+  </th>
+
+
+  <th (click)="sort('phonenumber')">Phone number
+    <span class="glyphicon sort-icon" *ngIf="key =='phonenumber'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+  </th>
+
+
+  <th (click)="sort('mailid')">Email
+    <span class="glyphicon sort-icon" *ngIf="key =='mailid'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+  </th>
+
+
+  <th (click)="sort('class')">Class
+    <span class="glyphicon sort-icon" *ngIf="key =='class'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+  </th>
+
+
+
+  <th (click)="sort('bloogroup')">Blood group
+    <span class="glyphicon sort-icon" *ngIf="key =='bloogroup'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+  </th>
+
+  <th (click)="sort('address')">Address
+    <span class="glyphicon sort-icon" *ngIf="key =='address'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+  </th>
+
+<th>   Edit</th>
+
+
+<th>   Delete</th>
+
+
+
+
+    <tr *ngFor="let st of student | orderBy: key : reverse | filter:term | paginate: { itemsPerPage: 20, currentPage: page, id: '1' }; let i = index">
+
+
+
+    <td>{{st.stid}}</td>
+    <td>{{st.name}}</td>
+    <td>{{st.guardian}}</td>
+    <td>{{st.phonenumber}}</td>
+    <td>{{st.mailid}}</td>
+    <td>{{st.class}}</td>
+    <td>{{st.bloogroup}}</td>
+    <td>{{st.address}}</td>
+
+
+<td>
+      <span (click)="addProduct(st.stid)" class="ti-plus"></span>
+
+    
+</td>
+<td>
+<span class="ti-pencil"  (click)="deleteProduct(st.stid)"></span>
+</td>
+
+</tr>
+
+
+
+
+
+</table>
+
+
+
+  <pagination-controls (pageChange)="page = $event" id="1"
+                       maxSize="20"
+                       directionLinks="true"
+                       autoHide="true">
+  </pagination-controls>
+</div>

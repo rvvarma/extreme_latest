@@ -1,0 +1,50 @@
+
+
+
+<div >
+<div >
+  <h1 class="h"> Add NEW  Teacher   </h1>
+        </div>
+
+<div class="sa">
+<button class="button" [routerLink]="['/admindashboard/addteacher']">ADD  TEACHER</button>
+</div>
+<br>
+<table id="customers" class="container">
+
+<tr>
+<th>School_Id</th>
+
+<th>Teacher_Id</th>
+<th>Class</th>
+<th>Section</th>
+<th>Subject</th>
+
+
+
+<th>EDIT</th></tr>
+<tr *ngFor="let teachers of teacher" >
+<td>{{teachers.School_Id}}</td>
+
+<td>{{teachers.Teacher_Id}}</td>
+<td>{{teachers.Class}}</td>
+<td>{{teachers.Section}}</td>
+<td>{{teachers.Subject}}</td>
+
+
+<td id="edit"><a [routerLink]="['/admindashboard/teacherlist/edit',teachers._id]"><span class="ti-pencil"></span></a></td>
+
+
+
+
+
+
+
+</tr>
+
+
+
+
+
+</table>
+</div>

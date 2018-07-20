@@ -1,0 +1,40 @@
+<div class="tea">
+  <form #data="ngForm" (ngSubmit)="onSubmit(data.value)" >
+
+  <label>Class </label>
+
+  <select name="Class"  [(ngModel)]="cl" >
+
+
+      <option *ngFor="let classes of class"   [value]="classes.classes.classname" >
+          {{classes.classes.classname}}
+      </option>
+  </select >
+
+  <label>Section</label>
+<select  name="Section" [(ngModel)]="sec">
+
+
+      <option *ngFor="let sections of section" [selected]="sections.value==sections" [value]="sections">
+          {{sections}}
+      </option></select>
+
+
+
+  <label>Subject</label>
+ <select  name="Subject"  [(ngModel)]="sub">
+
+
+            <option *ngFor="let sections of subjects" [value]="sections">
+                {{sections}}
+            </option>
+            </select>
+
+
+
+
+
+<input type="submit" value="update" >
+
+ </form>
+</div>

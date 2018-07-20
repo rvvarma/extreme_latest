@@ -1,0 +1,39 @@
+
+<ol class="breadcrumb">
+
+  <li class="breadcrumb-item active">School Configuration</li>
+</ol>
+<div class="total">
+<div class="create">
+<a [routerLink]="['/admindashboard/school']">NEW CONFIGURATION</a>
+</div>
+<table id="customers">
+
+  <tr >
+<th>Class Number</th>
+<th>FEE</th>
+  <th>TERMS</th>
+  <th>SUDENT LIMIT</th>
+  <th>EDIT</th>
+  <th>DELETE</th>
+</tr>
+
+<tr *ngFor="let teachers of teacher | orderBy: key : reverse | filter:term | paginate: { itemsPerPage: 10, currentPage: page, id: '1' }; let i = index" >
+<td>{{teachers.classes.classname}} </td>
+
+<td>{{teachers.classes.fee}}</td>
+<td>{{teachers.classes.terms}}</td>
+<td>{{teachers.classes.studentlimit}}</td>
+
+
+<td><a [routerLink]="['/edit', teachers.classes.classname]">EDIT</a></td>
+<!--<td><a [routerLink]="['/delete', teachers.classes.classname]">DELETE</a></td>-->
+<td><a href="#" onclick="delete()">DELETE</a></td>
+
+</tr>
+</table>
+
+
+
+
+</div>

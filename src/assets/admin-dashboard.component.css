@@ -1,0 +1,73 @@
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+.total{
+    background-color: #4CAF50;
+
+}
+.column {
+    float: left;
+    width: 33.33%;
+    margin-left:150px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+#button{
+background-color:lightgreen;
+}
+.row{
+padding-top:100px;
+padding-left:150px;
+
+}
+
+
+
+h1, h2 {
+  text-align:center;
+}
+
+hr {
+  margin:2em 0 !important;
+}
+
+.demo-card-wide.mdl-card {
+  width: 450px;
+  margin:0 auto;
+}
+.demo-card-wide > .mdl-card__title {
+  color: #fff;
+  height: 176px;
+  background: url('http://creatorclip.info/wp-content/uploads/2015/07/material.png') center / cover;
+}
+.demo-card-wide > .mdl-card__menu {
+
+}
+#head{
+color:black;
+}
+.demo-card-square.mdl-card {
+  width: 320px;
+  height: 320px;
+  margin:0 auto;
+}
+.demo-card-square > .mdl-card__title {
+  color: #fff;
+}

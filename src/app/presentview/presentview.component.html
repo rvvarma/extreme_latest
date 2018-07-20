@@ -1,0 +1,42 @@
+<ol class="breadcrumb">
+
+  <li class="breadcrumb-item active">Assignments List</li>
+</ol>
+<table color='blue'>
+  <thead>
+
+    <th>teacherid</th>
+    <th>schoolid</th>
+    <th>class</th>
+    <th>section</th>
+   <th>subject</th>
+   <th>title</th>
+   <th>description</th>
+   <th>file</th>
+   <th>filetype</th>
+   <th>date</th>
+   <th>filedownload</th>
+
+
+ </thead>
+
+<tbody>
+<tr *ngFor ="let a of sub" >
+
+
+  <td>{{a.teacherid}}</td>
+  <td>{{a.schoolid}}</td>
+  <td>{{a.class}}</td>
+  <td>{{a.section}}</td>
+  <td>{{a.subject}}</td>
+  <td>{{a.description}}</td>
+  <td>{{a.title}}</td>
+  <td>{{a.file}}</td>
+  <td>{{a.filetype}}</td>
+  <td>{{a.date}}</td>
+  <td><button class="btn btn-success" (click)="downloadFile(a.id)">Download</button>
+ </td>
+
+  </tr>
+</tbody>
+</table>

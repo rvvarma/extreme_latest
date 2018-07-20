@@ -1,0 +1,129 @@
+<p>
+  feeregister works!
+</p>
+
+
+<h2 >Fee details </h2>
+
+<form class="form-horizontal" [formGroup]="form">
+
+  <div class="form-group" [ngClass]="displayFieldCss('Student_Id')">
+    <div class="col-sm-4">
+      <label for="Student_Id" class="control-label required">StudentID</label>
+    <input type="text" id="Student_Id" class="form-control" formControlName="Student_Id">
+      <app-field-error-display [displayError]="isFieldValid('Student_Id')" errorMsg="Please inform Student Id">
+      </app-field-error-display>
+    </div>
+  </div>
+
+  <div class="form-group" [ngClass]="displayFieldCss('classs')">
+    <div class="col-sm-4">
+      <label for="classs" class="control-label required">Class</label>
+    <input type="text" id="classs" class="form-control" formControlName="classs">
+      <app-field-error-display [displayError]="isFieldValid('classs')" errorMsg="Please inform Class">
+      </app-field-error-display>
+    </div>
+  </div>
+
+
+
+    <div class="form-group" [ngClass]="displayFieldCss('studentname')">
+      <div class="col-sm-4">
+        <label for="studentname" class="control-label required">Student Name</label>
+      <input type="text" id="studentname" class="form-control" formControlName="studentname">
+        <app-field-error-display [displayError]="isFieldValid('studentname')" errorMsg="Please inform Student Name">
+        </app-field-error-display>
+      </div>
+    </div>
+
+    <div class="form-group" [ngClass]="displayFieldCss('fathername')">
+      <div class="col-sm-4">
+        <label for="fathername" class="control-label required">Father Name</label>
+      <input type="text" id="fathername" class="form-control" formControlName="fathername">
+        <app-field-error-display [displayError]="isFieldValid('fathername')" errorMsg="Please inform Father Name">
+        </app-field-error-display>
+      </div>
+    </div>
+
+
+        <div class="form-group" [ngClass]="displayFieldCss('totalfee')">
+          <div class="col-sm-4">
+            <label for="totalfee" class="control-label required">Total Fee</label>
+          <input type="text" id="totalfee" class="form-control" formControlName="totalfee">
+            <app-field-error-display [displayError]="isFieldValid('totalfee')" errorMsg="Please inform Total Fee">
+            </app-field-error-display>
+          </div>
+        </div>
+
+        <div class="form-group" [ngClass]="displayFieldCss('totalfeepaid')">
+          <div class="col-sm-4">
+            <label for="totalfeepaid" class="control-label required">Total Fee Paid</label>
+          <input type="text" id="totalfeepaid" class="form-control" formControlName="totalfeepaid">
+            <app-field-error-display [displayError]="isFieldValid('totalfeepaid')" errorMsg="Please inform Total Fee Paid">
+            </app-field-error-display>
+          </div>
+        </div>
+
+
+        <div class="form-group" [ngClass]="displayFieldCss('pendingfee')">
+          <div class="col-sm-4">
+            <label for="  pendingfee" class="control-label required">Pending Fee</label>
+          <input type="text" id="pendingfee" class="form-control" formControlName="pendingfee">
+            <app-field-error-display [displayError]="isFieldValid('pendingfee')" errorMsg="Please inform Pending Fee">
+            </app-field-error-display>
+          </div>
+        </div>
+
+<h1> Payment </h1>
+
+<div class="form-group" [ngClass]="displayFieldCss('amount')">
+  <div class="col-sm-4">
+    <label for="amount" class="control-label required">Amount</label>
+  <input type="text" id="amount" class="form-control" formControlName="amount">
+    <app-field-error-display [displayError]="isFieldValid('amount')" errorMsg="Please inform Amount">
+    </app-field-error-display>
+  </div>
+</div>
+
+<div class="form-group" [ngClass]="displayFieldCss('term')">
+  <div class="col-sm-4">
+    <label for="term" class="control-label required">Term</label>
+  <input type="text" id="term" class="form-control" formControlName="term">
+    <app-field-error-display [displayError]="isFieldValid('term')" errorMsg="Please inform Term">
+    </app-field-error-display>
+  </div>
+</div>
+
+
+ <label>Payment Mode</label>
+
+    <label>  <input type="checkbox"  formControlName="Payment_Mode">  Cash</label>
+    <label> <input type="checkbox" formControlName="Payment_Mode" >Cheque</label> <br><br>
+    <app-field-error-display [displayError]="isFieldValid('Payment_Mode')">
+    </app-field-error-display>
+
+<div class="form-group" [ngClass]="displayFieldCss('date')">
+  <div class="col-sm-4">
+    <label for="date" class="control-label required">Date</label>
+  <input type="text" id="date" class="form-control" formControlName="date">
+    <app-field-error-display [displayError]="isFieldValid('date')" errorMsg="Please inform Date">
+    </app-field-error-display>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  <button class="btn btn-primary" (click)="onSubmit()">Payment</button>
+  <button class="btn" (click)="reset()">Reset</button>
+
+
+</form>
