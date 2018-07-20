@@ -70,7 +70,7 @@ export class ParentassignmentComponent implements OnInit {
          data => {
            this.arrBirds = data as string [];	 // FILL THE ARRAY WITH DATA.
 
-            var url=this.arrBirds.IP +":"+this.arrBirds.port+"/assign/fetch/"+c+"/"+s"/"+year+","+month+","+day
+            var url=this.arrBirds.IP +":"+this.arrBirds.port+"/assign/fetch/"+c+"/"+s+"/"+year+","+month+","+day
                       console.log(url+"fi")
             this.http.get(url).subscribe((res: Response)
       =>{
@@ -84,7 +84,7 @@ export class ParentassignmentComponent implements OnInit {
              for(var j=0;j<data[i].assignment.length;j++)
              {
                var msg={
-                 teacherid:data[i].teacherid,
+                 teacherid:data[i].assignment[j].teacherid,
                  class:data[i].class,
                  section:data[i].section,
                  subject:data[i].assignment[j].subject,

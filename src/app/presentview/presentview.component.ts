@@ -84,7 +84,7 @@ var s="B"
       for(var j=0;j<data[i].assignment.length;j++)
       {
         var msg={
-          teacherid:data[i].teacherid,
+          teacherid:data[i].assignment[j].teacherid,
           schoolid:data[i].schoolid,
           class:data[i].class,
           section:data[i].section,
