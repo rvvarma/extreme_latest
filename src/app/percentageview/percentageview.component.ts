@@ -105,7 +105,7 @@ pieChartLabels =  ['Present', 'Absent', 'Leaves'];
           var a1=JSON.parse(this.getCookie("attendance"));
 
 
-          var m1=[];
+          var m1=[]
 
           Object.keys(a1).forEach(function(key) {
 

@@ -38,21 +38,27 @@
   <button (click)="GetSelectedItem('section','class','date','date1')">Get Attendance</button>
 </div>
 
+<div class="row">
+  <div class="col-25">
+<div class="container ">
 
-<div class="canvas ">
     <canvas
         baseChart
         [chartType]="'pie'"
         [datasets]="pieChartData"
-        [height]="2500"
-        [width]="2500"
+        [height]="300"
+        [width]="200"
         [labels]="pieChartLabels"
         [options]="pieChartOptions"
         [legend]="true"
         [colors]="pieChartColor"
         (chartClick)="tonChartClick($event)">
     </canvas>
+</div>
   </div>
+
+  <div class="col-50  col-md-offset-2">
+
   <div>
 
   <table id="myInput">
@@ -71,4 +77,5 @@
     </tr>
 
     </table></div>
+    </div>
 </div>

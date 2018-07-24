@@ -252,7 +252,7 @@ export class AssignmentviewComponent implements OnInit {
     }
 
     ngOnInit() {
-      this.id=this.getCookie("id")
+      this.id=this.getCookie("Id")
   console.log(this.id+"id")
   this.httpService.get('../assets/config/IPconfig.json').subscribe(
 

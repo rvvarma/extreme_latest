@@ -102,13 +102,15 @@ h2 a {
 
 .container th {
 	  background-color: #1F2739;
+    color: #FFFFFF;
+
 }
 
 .container td:first-child { color: #FB667A; }
 
 .container tr:hover {
-   background-color: #afeeee;
--webkit-box-shadow: 0 6px 6px -6px #afeeee;
+   background-color: #ddd;
+-webkit-box-shadow: 0 6px 6px -6px #26b3b3;
 	   -moz-box-shadow: 0 6px 6px -6px #afeeee;
 	        box-shadow: 0 6px 6px -6px #afeeee;
 }
@@ -118,7 +120,7 @@ h2 a {
   color: #403E10;
   font-weight: bold;
 
-  box-shadow: #afeeee -1px 1px, #afeeee -2px 2px, #afeeee -3px 3px, #afeeee -4px 4px, #afeeee -5px 5px, #afeeee -6px 6px;
+  box-shadow: #26b3b3 -1px 1px, #26b3b3 -2px 2px, #26b3b3 -3px 3px, #26b3b3 -4px 4px, #26b3b3 -5px 5px, #26b3b3 -6px 6px;
   transform: translate3d(6px, -6px, 0);
 
   transition-delay: 0s;

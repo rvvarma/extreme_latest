@@ -28,14 +28,14 @@ export class TeacherComponent implements OnInit {
       }
 
   //post registration details
-      onSubmit=function(account)
+    /*  onSubmit=function(account)
       {
 
           console.log(this.form)
 
         var dat=JSON.stringify(account)
         //alert(dat)
-        alert("created")
+        //alert("created")
         console.log(dat)
 
       var url=this.arrBirds.IP+":"+this.arrBirds.port+"/users3/post"
@@ -43,7 +43,7 @@ export class TeacherComponent implements OnInit {
           .then(res => console.log(account,<any[]> res.json()))
           .then(data => { return data; });
 
-         }
+        }*/
 
 
 

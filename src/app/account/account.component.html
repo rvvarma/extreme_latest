@@ -8,7 +8,8 @@
     <div class="row">
             <div class="col-50">
 
-              <div class=" col-md-offset-2">
+              <div class=" col-md-offset-1 col-sm-offset-1">
+
 
 
   <div class="form-group" [ngClass]="displayFieldCss('std')">
@@ -56,10 +57,10 @@
                  </div >  </div>
 
                              <div class="col-50">
-
+<div class="col-sm-offset-1">
   <div class="form-group" [ngClass]="displayFieldCss('email')">
-    <div class="col-sm-3  ">
-      <label for="email" >email ID</label>
+    <div class="col-sm-2  ">
+      <label for="email" >Email  ID</label>
       <input type="text" id="email" class="form-control" formControlName="email">
       <app-field-error-display [displayError]="isFieldValid('email')" errorMsg="Please inform email ID">
       </app-field-error-display>
@@ -85,6 +86,7 @@
   </div>
 
 
+</div>
 </div>
 </div>
 

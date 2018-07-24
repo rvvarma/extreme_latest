@@ -92,6 +92,9 @@ var schoolroots: Routes = [
 
       },
 
+      {  path:'feeregistration',component:    FeeregisterComponent
+
+      },
 
 
       {  path:'teacherregistration',component:    TeacherComponent
