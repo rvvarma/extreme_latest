@@ -189,6 +189,9 @@ path: 'teacherdashboard',
               {
                       path:'parentdash', component:PDashboardComponent
                     },
+                    {
+                        path:'calender/:id',component: CalenderComponent
+                    },
 
                     {
                       path:'assignment', component:AssignmentviewComponent

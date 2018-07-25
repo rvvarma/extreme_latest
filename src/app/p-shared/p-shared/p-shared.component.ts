@@ -11,7 +11,7 @@ export interface RouteInfo {
 export const ROUTES: RouteInfo[] = [
     { path: 'parentdash', title: 'Dashboard',  icon: 'ti-panel', class: '' },
     { path: 'user', title: 'User Profile',  icon:'ti-user', class: '' },
-    { path: 'attendanceforadmin', title: 'Attendance',  icon:'ti-view-list-alt', class: '' },
+    { path: 'calender/:id', title: 'Attendance',  icon:'ti-view-list-alt', class: '' },
     { path: 'assignment', title: 'Assignments',  icon:'ti-text', class: '' },
     { path: 'feedetails', title: 'Accounts',  icon:'ti-pencil-alt2', class: '' },
 

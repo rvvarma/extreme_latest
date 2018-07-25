@@ -7,9 +7,6 @@
 
 <div class="Container">
   <h2>   Attendance </h2>
-  <br>
-  <br>
-  <br>
 <div class="row">
   <div class="col-25  col-md-offset-1">
 <label>Class</label>
@@ -26,18 +23,16 @@
           {{sections}}
       </option>
   </select>
-</div>
-  <div class="col-5">
 
 <label>  From Date:</label><input id="date" type="date" ngModel>
 <br>
-<label>To Date:</label><input id="date1" type="date" ngModel>
-<br><br>
+<label>To Date:</label><input id="date1" type="date" ngModel><br>
 <br>
-<button class="btn" (click)="GetSelectedItem('section','class','date','date1')">Get Attendance</button>
-
+<br>
+<div class="col-50 ">
+  <button (click)="GetSelectedItem('section','class','date','date1')">Get Attendance</button>
 </div>
-
+</div>
 <div class="col-25 ">
 <div class="container1 ">
 
@@ -57,8 +52,7 @@
 </div>
 </div>
 
-</div>
-
+<br> <br>
 
 <br>
 <br>
