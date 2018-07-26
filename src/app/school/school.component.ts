@@ -61,7 +61,7 @@ export class SchoolComponent implements OnInit {
 
  for (var count = 0; count < 5; count++) {
   $("<input type='text' /><br>").appendTo("#textbox");
-}
+ }
 
 
 
@@ -120,7 +120,7 @@ console.log(m)
  ngOnInit() {
    //window.location.reload(1);
 setInterval(() => this.reloadPage(), 150000);
-
+//
    this.httpService.get('../assets/config/IPconfig.json').subscribe(
        data => {
          this.arrBirds = data as string [];	 // FILL THE ARRAY WITH DATA.

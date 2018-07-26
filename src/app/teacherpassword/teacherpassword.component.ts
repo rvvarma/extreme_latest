@@ -1,4 +1,4 @@
-import { RouterModule, ActivatedRoute, Params} from '@angular/router';
+import { RouterModule,Router, ActivatedRoute, Params} from '@angular/router';
 import { RequestOptions,Request,RequestMethod,Http,Response,Headers, } from '@angular/http';
 
 import { HttpClient } from '@angular/common/http';
@@ -12,7 +12,7 @@ import { Component, OnInit } from '@angular/core';
 export class TeacherpasswordComponent implements OnInit {
 
 u=[];
-  constructor(private route: ActivatedRoute,private http: Http,private httpService: HttpClient) { }
+  constructor(private route: ActivatedRoute,private router: Router,private http: Http,private httpService: HttpClient) { }
   //posting password
     onSubmit=function(pwd)
   {
@@ -32,6 +32,8 @@ console.log("hii")
         .then(res => console.log(pwd,<any[]> res.json()))
         .then(data => { return data; });
         alert("success")
+        this.router.navigate(['/login']);
+
     }
     else{
       alert("Passwords did not match")

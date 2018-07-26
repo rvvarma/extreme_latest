@@ -26,23 +26,6 @@ export class OwnerComponent implements OnInit {
     }
 
 //post registration details
-    /*onSubmit=function(account)
-    {
-
-        console.log(this.form)
-
-      var dat=JSON.stringify(account)
-      //alert(dat)
-      alert("created")
-      console.log(dat)
-
-    var url=this.arrBirds.IP+":"+this.arrBirds.port+"/users3/post"
-    this.http.post(url,account).toPromise()
-        .then(res => console.log(account,<any[]> res.json()))
-        .then(data => { return data; });
-
-       }
-*/
 
 
 
@@ -56,13 +39,13 @@ export class OwnerComponent implements OnInit {
       schooladdress:  [null, Validators.required],
       newschooladdress:  [null, Validators.required],
         state: [null, Validators.required],
-        zip: [null, Validators.required],
+      
 
 
 
 
     });
-  /*  this.httpService.get('../assets/config/IPconfig.json').subscribe(
+    this.httpService.get('../assets/config/IPconfig.json').subscribe(
         data => {
           this.arrBirds = data as string [];	 // FILL THE ARRAY WITH DATA.
 
@@ -72,7 +55,7 @@ export class OwnerComponent implements OnInit {
           console.log (err.message);
         }
       );
-*/
+
 
 
   }
@@ -92,6 +75,11 @@ export class OwnerComponent implements OnInit {
     console.log(this.form);
     if (this.form.valid) {
       console.log('form submitted');
+var account=this.form.value;
+      var url=this.arrBirds.IP+":"+this.arrBirds.port+"/users3/newadmin"
+      this.http.post(url,account).toPromise()
+          .then(res => console.log(account,<any[]> res.json()))
+          .then(data => { return data; });
     } else {
       this.validateAllFormFields(this.form);
     }

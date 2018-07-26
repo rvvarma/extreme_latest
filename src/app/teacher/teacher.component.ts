@@ -59,13 +59,13 @@ export class TeacherComponent implements OnInit {
       dob: [null, Validators.required],
       Address: [null, Validators.required],
       experience: [null, Validators.required],
-      previousschool: [null, Validators.required],
+
       phone_number: [null, Validators.required],
 
     });
 
 
-    /*  this.httpService.get('../assets/config/IPconfig.json').subscribe(
+      this.httpService.get('../assets/config/IPconfig.json').subscribe(
           data => {
             this.arrBirds = data as string [];	 // FILL THE ARRAY WITH DATA.
 
@@ -75,7 +75,7 @@ export class TeacherComponent implements OnInit {
             console.log (err.message);
           }
         );
-  */
+
 
 
 
@@ -96,8 +96,15 @@ export class TeacherComponent implements OnInit {
     console.log(this.form);
     if (this.form.valid) {
       console.log('form submitted');
+      var account=this.form.value;
+      var url=this.arrBirds.IP+":"+this.arrBirds.port+"/users5/add"
+      this.http.post(url,account).toPromise()
+          .then(res => console.log(account,<any[]> res.json()))
+          .then(data => { return data; });
     } else {
       this.validateAllFormFields(this.form);
+
+      console.log("not validated")
     }
   }
 
