@@ -32,6 +32,26 @@ export class HomeComponent implements OnInit {
   port:any;
   arrBirds:any;
   constructor(private http: Http, private httpService: HttpClient,private router: Router, private route: ActivatedRoute) { }
+getclass=function()
+{this.http.get(this.arrBirds.IP+":"+this.arrBirds.port+"/getClass").subscribe (
+  (res:Response) =>{
+    this.teacher=res.json();
+     // var classes=this.class[0].classname;
+     var data = this.teacher;
+
+     for(var i in data)
+     {
+          var id = data[i].classes.classname;
+        hash[data[i].classes.classname]=data[i].classes.sections
+     }
+
+this.section=hash[pro]
+    console.log(hash)
+  }
+)
+
+}
+
   fetchsection=function(pro)
   {
     var hash={};
@@ -144,5 +164,20 @@ this.section=hash[pro]
 
 
   }
+delete=function(classname)
+{
+  alert(classname)
+  if (confirm("Are you sure?")) {
+var c=classname
+    var url=this.arrBirds.IP +":"+this.arrBirds.port+"/classesdelete"+"/"+c
 
+     return this.http.delete(url).toPromise()
+       .then(() => {
+this.getclass()
+      })
+  }
+
+
+
+}
 }

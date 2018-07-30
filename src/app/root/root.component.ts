@@ -5,6 +5,7 @@ import { RequestOptions,Request,RequestMethod,Http,Response,Headers, } from '@an
 import { ActivatedRoute, Router, } from '@angular/router';
 //import 'rxjs/add/operator/toPromise';
 //import 'rxjs/add/operator/toPromise';
+import { HttpClient } from '@angular/common/http';
 
 import {
   ReactiveFormsModule,
@@ -30,11 +31,14 @@ export class RootComponent implements OnInit {
   class=[];
   tea=[];
   stu=[];
-    constructor(private http: Http, private router: Router, private route: ActivatedRoute) { }
+    constructor(private http: Http, private router: Router, private route: ActivatedRoute,private httpService: HttpClient) { }
   fetchclass=function()
   {
+    var url=this.arrBirds.IP +":"+this.arrBirds.port+"/users1/fetch"
 
-    this.http.get("http://10.10.5.54:3004/fetch").subscribe (
+
+console.log(url)
+    this.http.get(url).subscribe (
         (res:Response) =>{
           this.teacher=res.json();
             // var teacherslist=this.teacher[0].First_Name;
@@ -49,7 +53,9 @@ export class RootComponent implements OnInit {
 
   fetchsubjects=function(pro)
   {
-    this.http.get("http://10.10.5.54:3004/fetch").subscribe (
+    var url=this.arrBirds.IP +":"+this.arrBirds.port+"/users1/fetch"
+
+    this.http.get(url).subscribe (
         (res:Response) =>{
           this.teacher=res.json();
             // var teacherslist=this.teacher[0].First_Name;
@@ -59,11 +65,23 @@ export class RootComponent implements OnInit {
     )
   }
 
-  openCity=function(c,s)
+  openCity=function(evt,ee,c,s)
   {console.log("hii")
+  var i, tabcontent, tablinks;
+   tabcontent = document.getElementsByClassName("tabcontent");
+   for (i = 0; i < tabcontent.length; i++) {
+       tabcontent[i].style.display = "none";
+   }
+   tablinks = document.getElementsByClassName("tablinks");
+   for (i = 0; i < tablinks.length; i++) {
+       tablinks[i].className = tablinks[i].className.replace(" active", "");
+   }
+   document.getElementById(ee).style.display = "block";
   var e=document.getElementById(c)
   var x=document.getElementById(s)
-  var url="http://10.10.5.54:3004/getdetails"+"/"+e.options[e.selectedIndex].value+"/"+x.options[x.selectedIndex].value
+  //var url=this.arrBirds.IP +":"+this.arrBirds.port+"/users1/getdetails"
+
+  var url=this.arrBirds.IP +":"+this.arrBirds.port+"/users1/getdetails"+"/"+e.options[e.selectedIndex].value+"/"+x.options[x.selectedIndex].value
   console.log(url)
     this.http.get(url).subscribe (
       (res:Response) =>{
@@ -82,7 +100,9 @@ export class RootComponent implements OnInit {
   {console.log("hii")
   var e=document.getElementById(c)
   var x=document.getElementById(s)
-  var url="http://10.10.5.42:5000/filter"+"/"+e.options[e.selectedIndex].value+"/"+x.options[x.selectedIndex].value
+  var url=this.arrBirds.IP +":"+this.arrBirds.port+"/filter"+"/"+e.options[e.selectedIndex].value+"/"+x.options[x.selectedIndex].value
+
+//  var url="http://10.10.5.42:5000/filter"+"/"+e.options[e.selectedIndex].value+"/"+x.options[x.selectedIndex].value
   console.log(url)
     this.http.get(url).subscribe (
       (res:Response) =>{
@@ -98,7 +118,15 @@ export class RootComponent implements OnInit {
 
   }
     ngOnInit() {
-      this.fetchclass();
+      this.httpService.get('../assets/config/IPconfig.json').subscribe(
+          data => {
+            this.arrBirds = data as string [];	 // FILL THE ARRAY WITH DATA.
+
+             var url=this.arrBirds.IP +":"this.arrBirds.port+"/classesconfig"
+             console.log(url)
+             this.fetchclass();
+           });
+
 
 
 

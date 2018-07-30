@@ -77,7 +77,7 @@ console.log(x)
 console.log(ter)
 console.log(fee)
 if (isNaN(x) || x < 1 || x > 100) {
-  //alert("Student limit upto 100 only");
+  alert("Student limit upto 100 only");
 }
 var m={
   "classname":cls,
@@ -104,10 +104,16 @@ console.log(m)
 
   console.log(m)
 */
- var bug=formdata.classes
- console.log(bug)
+
+ var url=this.arrBirds.IP +":"+this.arrBirds.port+"/classesconfig"
+    console.log(url)
+    this.http.post(url,{"classes":m}).toPromise()
+      .then(res => console.log(m,<any[]> res.json()))
 
 
+      .then(data => { return data; });
+
+      this.router.navigate(['/admindashboard/first']);
 
   }
 
@@ -115,6 +121,17 @@ console.log(m)
 //
 
   ngOnInit() {
+    this.httpService.get('../assets/config/IPconfig.json').subscribe(
+       data => {
+         this.arrBirds = data as string [];	 // FILL THE ARRAY WITH DATA.
+
+          var url=this.arrBirds.IP +":"this.arrBirds.port+"/classesconfig"
+          console.log(url)
+       },
+       (err: HttpErrorResponse) => {
+         console.log (err.message);
+       }
+     );
     this.form = this.formBuilder.group({
 
       sections: [null, Validators.required],
@@ -142,14 +159,6 @@ console.log(m)
     };
   }
 
-  onSubmit() {
-    console.log(this.form);
-    if (this.form.valid) {
-      console.log('form submitted');
-    } else {
-      this.validateAllFormFields(this.form);
-    }
-  }
 
   validateAllFormFields(formGroup: FormGroup) {
     Object.keys(formGroup.controls).forEach(field => {
