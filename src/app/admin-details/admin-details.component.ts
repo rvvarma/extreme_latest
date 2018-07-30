@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./admin-details.component.css']
 })
 export class AdminDetailsComponent implements OnInit {
-
+//
   constructor(private http:Http,private httpService: HttpClient) { }
 
   //post or add new teacher to the school

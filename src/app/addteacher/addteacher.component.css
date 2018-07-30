@@ -87,13 +87,7 @@ select:focus {
 @charset "UTF-8";
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
 
-body {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 300;
-  line-height: 1.42em;
-  color:white;
 
-}
 
 h1 {
   font-size:3em;
@@ -104,7 +98,7 @@ h1 {
 }
 
 h2 {
-  font-size:1em;
+  font-size:3em;
   font-weight: 300;
   text-align: center;
   display: block;
@@ -142,7 +136,7 @@ h2 a {
 	  text-align: left;
 	  overflow: hidden;
 	  width: 80%;
-	  margin: 20 auto;
+	  margin: 20 ;
   display: table;
   padding: 0 0 8em 0;
 }

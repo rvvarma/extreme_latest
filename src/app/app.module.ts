@@ -77,6 +77,7 @@ import { TeacherComponent } from './teacher/teacher.component';
 import { FieldErrorDisplayComponent } from './field-error-display/field-error-display.component';
 import { SchoolComponent } from './school/school.component';
 import { FeeregisterComponent } from './feeregister/feeregister.component';
+import { ParentaccountsComponent } from './parentaccounts/parentaccounts.component';
 
 
 
@@ -137,7 +138,7 @@ var schoolroots: Routes = [
       {
         path:'teacherlist'
         ,component: AssignTeacherClassListComponent
-
+},
       {
         path:'teacherlist/edit/:id'
         ,component: EditAssignTeacherClassListComponent
@@ -256,7 +257,9 @@ path: 'teacherdashboard',
     TeacherComponent,
     FieldErrorDisplayComponent,
 
-    FeeregisterComponent
+    FeeregisterComponent,
+
+    ParentaccountsComponent
 
 
     ],

@@ -13,38 +13,100 @@
   </li>
   <li class="breadcrumb-item active">New Configuration</li>
 </ol>
-<form #data="ngForm" (ngSubmit)="onSubmit(data.value)" class="formclass">
 
-  Class:<input type="text" name="classname" id="classid" ngModel><br>
+
+
+<form class="form-horizontal" [formGroup]="form">
+
+  <div class="form-group" [ngClass]="displayFieldCss('classname')">
+      <div class="col-sm-4">
+  <label>Class:</label><input type="text" name="classname" id="classid" class="form-control" formControlName="classname" ngModel><br>
+  <app-field-error-display [displayError]="isFieldValid('classname')" errorMsg="Please inform Class">
+      </app-field-error-display>
+
+</div>
+</div>
+
 
   <div id='TextBoxesG'>
     <div id="TextBoxD">
-      <label>Section 1 : </label><input type="text" name="sections" id="textbox2" ngModel>
 
+<div class="form-group" [ngClass]="displayFieldCss('sections')">
+    <div class="col-sm-4">
+      <label>Section 1 : </label><input type="text" name="sections" id="textbox2" class="form-control" formControlName="sections" ngModel>
+      <app-field-error-display [displayError]="isFieldValid('sections')" errorMsg="Please inform Section">
+          </app-field-error-display>
     </div>
-  </div><input type='button' value='Add Sections' id='addsections'>
+  </div>
+</div>
+</div>
+
+  <input type='button' value='Add Sections' id='addsections'>
   <input type='button' value='Remove Sections' id='removesections'>
   <br>
+
+
   <div id='TextBoxesGroup'>
     <div id="TextBoxDiv1">
-      <label>Subject 1 : </label><input type="text" name="subjects" id="textbox1" ngModel>
+
+      <div class="form-group" [ngClass]="displayFieldCss('subjects')">
+          <div class="col-sm-4">
+      <label>Subject 1 : </label><input type="text" name="subjects" id="textbox1" class="form-control" formControlName="subjects" ngModel>
+      <app-field-error-display [displayError]="isFieldValid('subjects')" errorMsg="Please inform Subject">
+          </app-field-error-display>
 
     </div>
   </div>
+</div>
+</div>
+
   <input type='button' value='Add Subject' id='addButton'>
   <input type='button' value='Remove Subject' id='removeButton'>
   <br>
-  StudentLimit:<input type="text" name="studentlimit" id="limitid" ngModel><br>
+
+  <div class="form-group" [ngClass]="displayFieldCss('studentlimit')">
+      <div class="col-sm-4">
+  <label>StudentLimit:</label><input type="text" name="studentlimit" id="limitid" class="form-control" formControlName="studentlimit" ngModel><br>
+  <app-field-error-display [displayError]="isFieldValid('studentlimit')" errorMsg="Please inform Student Limit">
+      </app-field-error-display>
+    </div>
+    </div>
+
+
+
+
 
   <div id='TextBoxesGroup2'>
     <div id="TextBoxDiv2">
-      <label>Terms : </label><input type="text" name="terms" id="textbox3" ngModel>
+      <div class="form-group" [ngClass]="displayFieldCss('terms')">
+          <div class="col-sm-4">
+
+      <label>Terms : </label><input type="text" name="terms" id="textbox3" class="form-control" formControlName="terms" ngModel>
+      <app-field-error-display [displayError]="isFieldValid('terms')" errorMsg="Please inform Term">
+          </app-field-error-display>
 
     </div>
   </div>
+      </div>
+    </div>
+
   <input type='button' value='Add Terms' id='addterms'>
   <input type='button' value='Remove Terms' id='removeterms'><br>
-  fee:<input type="text" name="fee" id="feeid" ngModel><br>
-  <input type="submit" value="Submit" >
+
+  <div class="form-group" [ngClass]="displayFieldCss('fee')">
+      <div class="col-sm-4">
+<label>fee:</label> <input type="text" name="fee" id="feeid" class="form-control" formControlName="fee" ngModel><br>
+  <app-field-error-display [displayError]="isFieldValid('fee')" errorMsg="Please inform Fee">
+      </app-field-error-display>
+</div>
+</div>
+
+
+
+
+
+    <button class="btn btn-primary" (click)="onSubmit()">Submit</button>
+    <button class="btn" (click)="reset()">Reset</button>
+
 
 </form>

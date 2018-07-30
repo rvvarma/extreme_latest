@@ -89,7 +89,7 @@ export class AccountComponent implements OnInit {
       'has-error': this.isFieldValid(field),
       'has-feedback': this.isFieldValid(field)
     };
-  }
+  }//
 
   onSubmit() {
 

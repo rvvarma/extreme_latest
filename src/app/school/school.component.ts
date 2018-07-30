@@ -1,26 +1,16 @@
-import { Component, OnInit,NgModule,Pipe,} from '@angular/core';
-import { trigger, style, transition, animate, group }
-    from '@angular/animations';
+
+
 import { RequestOptions,Request,RequestMethod,Http,Response,Headers,ResponseType, ResponseContentType } from '@angular/http';
 import { ActivatedRoute, Router, } from '@angular/router';
-import {
-  ReactiveFormsModule,
-  FormsModule,
-  FormGroup,
-  FormControl,
-  Validators,
-  FormBuilder
-} from '@angular/forms';
-import * as $ from 'jquery';
-import { Http } from '@angular/http';
-import 'rxjs/add/operator/map'
 import { HttpClient } from '@angular/common/http';
 import { HttpErrorResponse } from '@angular/common/http';
-import {BrowserModule} from '@angular/platform-browser';
-import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
-import { HttpClient } from '@angular/common/http';
-import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
-import { identifierName } from '@angular/compiler';
+import { Component, OnInit } from '@angular/core';
+import {
+  FormGroup,
+  FormBuilder,
+  Validators,
+  FormControl
+} from '@angular/forms';
 
 
 @Component({
@@ -28,13 +18,26 @@ import { identifierName } from '@angular/compiler';
   templateUrl: './school.component.html',
   styleUrls: ['./school.component.css']
 })
-export class SchoolComponent implements OnInit {
+export class  SchoolComponent implements OnInit {
+  form: FormGroup;
 
-  constructor( private http: Http, private router: Router, private route: ActivatedRoute,private httpService: HttpClient) {  }
-  onSubmit=function(formdata)
+  constructor(private formBuilder: FormBuilder, private http: Http, private router: Router, private route: ActivatedRoute,private httpService: HttpClient) {}
+
+  onSubmit=function(form)
   {
-    alert(JSON.stringify(formdata))
-  console.log(formdata)
+
+{
+      console.log(this.form);
+      if (this.form.valid) {
+        console.log('form submitted');
+      } else {
+        this.validateAllFormFields(this.form);
+      }
+    }
+
+
+    //alert(JSON.stringify(form))
+  console.log(form)
   var counter=0;
   var cls=(<HTMLInputElement>document.getElementById("classid")).value;
   var sec=(<HTMLInputElement>document.getElementById("textbox2")).value;
@@ -61,7 +64,7 @@ export class SchoolComponent implements OnInit {
 
  for (var count = 0; count < 5; count++) {
   $("<input type='text' /><br>").appendTo("#textbox");
- }
+}
 
 
 
@@ -74,7 +77,7 @@ console.log(x)
 console.log(ter)
 console.log(fee)
 if (isNaN(x) || x < 1 || x > 100) {
-  alert("Student limit upto 100 only");
+  //alert("Student limit upto 100 only");
 }
 var m={
   "classname":cls,
@@ -104,35 +107,63 @@ console.log(m)
  var bug=formdata.classes
  console.log(bug)
 
-   //const url=this.httpService.get('../assets/config/IPconfig.json';
-    //console.log(url)
-    var url=this.arrBirds.IP +":"+this.arrBirds.port+"/classesconfig"
-    console.log(url)
-    this.http.post(url,{"classes":m}).toPromise()
-      .then(res => console.log(m,<any[]> res.json()))
-
-
-      .then(data => { return data; });
-
 
 
   }
- ngOnInit() {
-   //window.location.reload(1);
-setInterval(() => this.reloadPage(), 150000);
+
 //
-   this.httpService.get('../assets/config/IPconfig.json').subscribe(
-       data => {
-         this.arrBirds = data as string [];	 // FILL THE ARRAY WITH DATA.
+//
 
-          var url=this.arrBirds.IP +":"this.arrBirds.port+"/classesconfig"
-          console.log(url)
-       },
-       (err: HttpErrorResponse) => {
-         console.log (err.message);
-       }
-     );
+  ngOnInit() {
+    this.form = this.formBuilder.group({
 
+      sections: [null, Validators.required],
+      subjects: [null, Validators.required],
+      classname: [null, Validators.required],
+     terms: [null, Validators.required],
+      fee: [null, Validators.required],
+    studentlimit: [null, Validators.required],
+
+      terms:[null, Validators.required],
+
+
+
+    });
   }
 
+  isFieldValid(field: string) {
+    return !this.form.get(field).valid && this.form.get(field).touched;
+  }
+
+  displayFieldCss(field: string) {
+    return {
+      'has-error': this.isFieldValid(field),
+      'has-feedback': this.isFieldValid(field)
+    };
+  }
+
+  onSubmit() {
+    console.log(this.form);
+    if (this.form.valid) {
+      console.log('form submitted');
+    } else {
+      this.validateAllFormFields(this.form);
+    }
+  }
+
+  validateAllFormFields(formGroup: FormGroup) {
+    Object.keys(formGroup.controls).forEach(field => {
+      console.log(field);
+      const control = formGroup.get(field);
+      if (control instanceof FormControl) {
+        control.markAsTouched({ onlySelf: true });
+      } else if (control instanceof FormGroup) {
+        this.validateAllFormFields(control);
+      }
+    });
+  }
+
+  reset(){
+    this.form.reset();
+  }
 }

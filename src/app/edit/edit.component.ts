@@ -58,12 +58,13 @@ onSubmit=function(Teacher_Name) {
     var secti = $("input[name='sections']")
     .map(function(){return $(this).val();}).get();
     console.log(secti)
-    this.su.push(secti)
-    console.log(this.su)
+    this.su=secti
+ //   console.lo(secti)
     var subj = $("input[name='subjects']")
     .map(function(){return $(this).val();}).get();
-    console.log(subj)
-    this.dh.push(subj)
+   // console.log(subj)
+	//
+    this.dh=subj
    var aws={
     "terms":[Teacher_Name.TERMS],
     "fee":Teacher_Name.fee,
@@ -78,7 +79,7 @@ onSubmit=function(Teacher_Name) {
 
    console.log(aws)
   if(confirm("ARE U SURE FOR UPDATE?"))
-  {var url=this.arrBirds.IP +":"+this.arrBirds.port+"/updateclassdetails+"/"+classname"
+  {var url=this.arrBirds.IP +":"+this.arrBirds.port+"/updateclassdetails/"+classname
     console.log(url)
 
     //const url="http://10.10.5.42:5000/updateclassdetails"+"/"+classname;

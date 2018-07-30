@@ -17,12 +17,6 @@ padding-top: 10px;
 
 
 }
-.column {
-    float: left;
-    width: 33.33%;
-    padding: 5px;
-}
-
 </style>
 <style>
 
@@ -39,7 +33,7 @@ padding-top: 10px;
 
 <body>
 
-  <div class="containers">
+  <div class="container">
 
   <h2 > Add New  Teacher   </h2>
   <form  #data="ngForm" (ngSubmit)="onSubmit(data.value)">
@@ -133,7 +127,7 @@ padding-top: 10px;
  <td>{{teachers.Section}}</td>
  <td>{{teachers.Subject}}</td>
 
- <td><a [routerLink]="['/edit', teachers.Teacher_Id]">EDIT</a></td>
+ <td><a [routerLink]="['/admindashboard/teacherlist/edit', teachers.Teacher_Id]">EDIT</a></td>
  <!---<td><a href="javascript:void(0)" routerLink="cartoonBoxUrl()" routerLinkActive="active">EDIT</a></td>-->
 
 
