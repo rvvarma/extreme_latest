@@ -47,6 +47,71 @@ export class ParentassignmentComponent implements OnInit {
     }
 
 
+
+
+
+
+    GetAssignments=function(d1)
+      {
+
+
+    var date = document.getElementById(d1).value
+        console.log(date+"date")
+           this.data=date.split("-");
+
+
+           for(var i in this.data)
+           {
+           this.a1=this.data[i];
+         }
+         var c1="1";
+         var s1="A";
+        var c=this.getCookie("class");
+       var s=this.getCookie("section");
+         var url=this.arrBirds.IP +":"+this.arrBirds.port+"/assign/fetch/"+c1+"/"+s1+"/"+this.data
+                   console.log(url+"fi")
+                   this.http.get(url).subscribe((res: Response)
+                 =>{
+
+
+                  this.assignment= res.json();
+                  var data=this.assignment;
+                  console.log(data)
+                  for(var i in data)
+                 {
+                    for(var j=0;j<data[i].assignment.length;j++)
+                    {
+                      var msg={
+                        teacherid:data[i].assignment[j].teacherid,
+                        class:data[i].class,
+                        section:data[i].section,
+                        subject:data[i].assignment[j].subject,
+                         description:data[i].assignment[j].description,
+                         title:data[i].assignment[j].title,
+                         file:data[i].assignment[j].file,
+                         filetype:data[i].assignment[j].filetype,
+                         date:data[i].date,
+                         id:data[i]._id
+
+
+                      }
+                  this.sub.push(msg)
+
+                     }
+
+
+
+
+                 //    console.log(this.sub)
+
+                    }
+
+                 });
+
+
+
+   }
+
     // e.g This will open an image in a new window
 
     ngOnInit()
@@ -70,7 +135,7 @@ export class ParentassignmentComponent implements OnInit {
          data => {
            this.arrBirds = data as string [];	 // FILL THE ARRAY WITH DATA.
 
-            var url=this.arrBirds.IP +":"+this.arrBirds.port+"/assign/fetch/"+c+"/"+s+"/"+year+","+month+","+day
+           /*var url=this.arrBirds.IP +":"+this.arrBirds.port+"/assign/fetch/"+c+"/"+s+"/"+year+","+month+","+day
                       console.log(url+"fi")
             this.http.get(url).subscribe((res: Response)
       =>{
@@ -110,7 +175,7 @@ export class ParentassignmentComponent implements OnInit {
 
              }
 
-    });
+    });*/
     }
     }
 

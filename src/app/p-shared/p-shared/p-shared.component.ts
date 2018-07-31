@@ -13,7 +13,7 @@ export const ROUTES: RouteInfo[] = [
     { path: 'user', title: 'User Profile',  icon:'ti-user', class: '' },
     { path: 'calender/:id', title: 'Attendance',  icon:'ti-view-list-alt', class: '' },
     { path: 'assignment', title: 'Assignments',  icon:'ti-text', class: '' },
-    { path: 'feedetails', title: 'Accounts',  icon:'ti-pencil-alt2', class: '' },
+    { path: 'parentaccount', title: 'Accounts',  icon:'ti-pencil-alt2', class: '' },
 
 ];
 @Component({

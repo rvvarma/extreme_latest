@@ -155,6 +155,9 @@ var schoolroots: Routes = [
          {
                  path:'admindash', component:ADashboardComponent
                },
+               {
+                 path:'edit/:id',component:EditComponent
+                   },
   ]
 },
 {
@@ -195,7 +198,7 @@ path: 'teacherdashboard',
                     },
 
                     {
-                      path:'assignment', component:AssignmentviewComponent
+                      path:'assignment', component:ParentassignmentComponent
                     },
                     {
                       path:'present', component:PresentviewComponent
@@ -205,6 +208,10 @@ path: 'teacherdashboard',
                   {
                       path:'parentassignment',component: ParentassignmentComponent
                   },
+                  {
+                      path:'parentaccount',component: ParentaccountsComponent
+                  },
+
 
             ]
 }]
@@ -331,7 +338,9 @@ path: 'teacherdashboard',
 
 
 
-
+      {
+          path:'parentaccount',component: ParentaccountsComponent
+      },
 
  {  path:'attendanceforadmin',component:AttendanceviewforadminComponent
 },

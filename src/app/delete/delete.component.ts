@@ -41,37 +41,18 @@ export class DeleteComponent implements OnInit {
                 console.log(url)
                   console.log("dsvsdvsd" +this.bankName)
                  // const url="http://10.10.5.42:5000/classesdelete"+"/"+this.bankName;
+                 if (confirm("Are you sure?")) {
+
+
+   return this.http.delete(url, this.bankName).toPromise()
+     .then(() => {
+
+      this.fetchData();
+    })
+}
 
 
 
-                  this.http.delete(url,this.bankName).subscribe (
-                    (res:Response) =>{
-                      this.day=res.json();
-                      console.log(this.day)
-                    }
-                  )
-                          },
-                          (err: HttpErrorResponse) => {
-                            console.log (err.message);
-                          }
-
-                        );
-
-             //this.bankName = this.route.snapshot.params['id'];
-
-               console.log("dsvsdvsd" +this.bankName)
-              // const url="http://10.10.5.42:5000/classesdelete"+"/"+this.bankName;
-
-
-
-               this.http.delete(url,this.bankName).subscribe (
-                 (res:Response) =>{
-                   this.day=res.json();
-                   console.log(this.day)
-                 }
-               )
-             );
-              );
 
 
 
