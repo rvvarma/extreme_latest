@@ -20,7 +20,11 @@ export class PresentviewComponent implements OnInit {
   sub=[];
   ass=[];
 
-  constructor(private http: Http,private httpService: HttpClient) { }
+  getCookie(key:string){
+      return this._cookieService.get(key);
+    }
+
+  constructor(private http: Http,private httpService: HttpClient,private _cookieService:CookieService) { }
 
 
 downloadFile(f1)
@@ -47,16 +51,71 @@ var win=window.open(this.arrBirds.IP +":"+this.arrBirds.port+"/uploads"+"/"+base
 });
 }
 
+GetAssignments=function(d1)
+  {
 
-// e.g This will open an image in a new window
+this.sub=[]
+var date = document.getElementById(d1).value
+    console.log(date+"date")
+       this.data=date.split("-");
+
+
+       for(var i in this.data)
+       {
+       this.a1=this.data[i];
+     }
+     var c1="5";
+     var s1="B";
+    var c=this.getCookie("class");
+   var s=this.getCookie("section");
+     var url=this.arrBirds.IP +":"+this.arrBirds.port+"/assign/fetch/"+c+"/"+s+"/"+this.data
+               console.log(url+"fi")
+               this.http.get(url).subscribe((res: Response)
+             =>{
+
+
+              this.assignment= res.json();
+              var data=this.assignment;
+              console.log(data)
+              for(var i in data)
+             {
+                for(var j=0;j<data[i].assignment.length;j++)
+                {
+                  var msg={
+                    teacherid:data[i].assignment[j].teacherid,
+                    class:data[i].class,
+                    section:data[i].section,
+                    subject:data[i].assignment[j].subject,
+                     description:data[i].assignment[j].description,
+                     title:data[i].assignment[j].title,
+                     file:data[i].assignment[j].file,
+                     filetype:data[i].assignment[j].filetype,
+                     date:data[i].date,
+                     id:data[i]._id
+
+
+                  }
+              this.sub.push(msg)
+
+                 }
+
+
+                }
+
+             });
+
+
+
+}
+
 
   ngOnInit()
   {
 
-    //var c=this.getCookie("class");
-     //var s=this.getCookie("section");
-var c="5"
-var s="B"
+    var c=this.getCookie("class");
+     var s=this.getCookie("section");
+var c1="5"
+var s1="B"
      //console.log(date.now()+"date")
      var dateObj = new Date();
      var month = dateObj.getUTCMonth() +1; //months from 1-12
@@ -69,7 +128,7 @@ var s="B"
        data => {
          this.arrBirds = data as string [];	 // FILL THE ARRAY WITH DATA.
 
-          var url=this.arrBirds.IP +":"+this.arrBirds.port+"/assign"
+          var url=this.arrBirds.IP +":"+this.arrBirds.port+"/assign/fetch/"+c+"/"+s+"/"+year+","+month+","+day
           console.log(url)
           this.http.get(url).subscribe((res: Response)
   =>{

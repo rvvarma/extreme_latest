@@ -4,7 +4,7 @@
   border: 1px solid lightgrey;
   border-radius: 3px;
   width:inherit;
-  margin:50px;
+  margin:60px;
 }
 .row {
   display: -ms-flexbox; /* IE10 */
@@ -61,8 +61,8 @@ input[type=text] {
   position:relative;
   left:350px;
 }
-.btn {
-  background-color: #4CAF50;
+.btn-green {
+  background-color: green;
   color: white;
   padding: 10px;
   margin: 10px 0;
@@ -73,4 +73,11 @@ input[type=text] {
   font-size: 17px;
   position:relative;
   left:250px;
+}
+h1 {
+  font-size:4em;
+  font-weight: 300;
+  line-height:1em;
+  text-align: center;
+  color: #4DC3FA;
 }

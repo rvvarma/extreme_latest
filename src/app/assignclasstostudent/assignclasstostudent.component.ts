@@ -178,7 +178,6 @@ console.log(this.student)
 
 this.fetchData();
 this.fetchclass();
-this.deleteProduct();
 //this.addProduct();
 
       },

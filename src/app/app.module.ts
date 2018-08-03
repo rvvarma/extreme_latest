@@ -78,6 +78,7 @@ import { FieldErrorDisplayComponent } from './field-error-display/field-error-di
 import { SchoolComponent } from './school/school.component';
 import { FeeregisterComponent } from './feeregister/feeregister.component';
 import { ParentaccountsComponent } from './parentaccounts/parentaccounts.component';
+import { CheckComponent } from './check/check.component';
 
 
 
@@ -266,7 +267,9 @@ path: 'teacherdashboard',
 
     FeeregisterComponent,
 
-    ParentaccountsComponent
+    ParentaccountsComponent,
+
+    CheckComponent
 
 
     ],
@@ -305,6 +308,10 @@ path: 'teacherdashboard',
       ,{
         path:'admin/teacherlist'
         ,component: AssignTeacherClassListComponent
+      },
+      {
+        path:'checkemail'
+        ,component: CheckComponent
       },
       {
         path:'admin/teacherlist/edit/:id'

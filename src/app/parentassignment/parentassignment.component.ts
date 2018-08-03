@@ -54,7 +54,7 @@ export class ParentassignmentComponent implements OnInit {
     GetAssignments=function(d1)
       {
 
-
+   this.sub=[]
     var date = document.getElementById(d1).value
         console.log(date+"date")
            this.data=date.split("-");
@@ -64,8 +64,8 @@ export class ParentassignmentComponent implements OnInit {
            {
            this.a1=this.data[i];
          }
-         var c1="1";
-         var s1="A";
+         var c1="5";
+         var s1="B";
         var c=this.getCookie("class");
        var s=this.getCookie("section");
          var url=this.arrBirds.IP +":"+this.arrBirds.port+"/assign/fetch/"+c1+"/"+s1+"/"+this.data
@@ -116,6 +116,8 @@ export class ParentassignmentComponent implements OnInit {
 
     ngOnInit()
     {
+      var c1="5"
+      var s1="B"
       var c=this.getCookie("class");
       var s=this.getCookie("section");
       console.log(c+"class")
@@ -135,7 +137,7 @@ export class ParentassignmentComponent implements OnInit {
          data => {
            this.arrBirds = data as string [];	 // FILL THE ARRAY WITH DATA.
 
-           /*var url=this.arrBirds.IP +":"+this.arrBirds.port+"/assign/fetch/"+c+"/"+s+"/"+year+","+month+","+day
+           var url=this.arrBirds.IP +":"+this.arrBirds.port+"/assign/fetch/"+c1+"/"+s1+"/"+year+","+month+","+day
                       console.log(url+"fi")
             this.http.get(url).subscribe((res: Response)
       =>{
@@ -164,19 +166,13 @@ export class ParentassignmentComponent implements OnInit {
                }
            this.sub.push(msg)
 
-              },
-              (err: HttpErrorResponse) => {
-                console.log (err.message);
               }
-            );
 
-
-         //    console.log(this.sub)
 
              }
 
-    });*/
+    });
     }
-    }
+  }
 
 }

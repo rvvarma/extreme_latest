@@ -183,6 +183,7 @@ export class AssignmentviewComponent implements OnInit {
          var binaryString = readerEvt.target.result;
                 this.base64textString= btoa(binaryString);
                 this.s=this.base64textString
+                //console.log(this.s+"file")
 
 
 
@@ -242,7 +243,7 @@ export class AssignmentviewComponent implements OnInit {
       console.log(res.json());
       this._cookieService.put("class",this.c);
       this._cookieService.put("section",this.s1);
-      this.router.navigate(['/present']);
+      this.router.navigate(['/teacherdashboard/present']);
 
     })
 

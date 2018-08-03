@@ -1,19 +1,25 @@
 <div class="Container">
-  <h2>   Accounts </h2>
+  <h1>   Accounts </h1>
 <div class="row">
   <div class="col-25  col-md-offset-3">
 
 
 <div *ngFor ="let st of acc" >
+  <div classs="row">
+    <div class="col-25  col-md-offset-1">
+
   <label>totalfee:</label>{{st.totalfee}}<br>
   <label>balance:</label>{{st.balance}}<br>
+</div>
+<div class="col-25">
+
   <label>term:</label>{{st.term}}<br>
   <label>date:</label>{{st.date}}<br>
-
+</div>
 </div>
 
-
-<table color='blue'>
+</div>
+<table class="container2" color='blue'>
   <thead>
 
 
@@ -38,6 +44,5 @@
 
 </tbody>
 </table>
-</div>
 </div>
 </div>
