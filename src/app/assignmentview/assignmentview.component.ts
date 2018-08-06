@@ -61,6 +61,40 @@ export class AssignmentviewComponent implements OnInit {
   })
   }
 
+
+
+
+  openCity=function(evt,ee,c,s)
+  {console.log("hii")
+  var i, tabcontent, tablinks;
+   tabcontent = document.getElementsByClassName("tabcontent");
+   for (i = 0; i < tabcontent.length; i++) {
+       tabcontent[i].style.display = "none";
+   }
+   tablinks = document.getElementsByClassName("tablinks");
+   for (i = 0; i < tablinks.length; i++) {
+       tablinks[i].className = tablinks[i].className.replace(" active", "");
+   }
+   document.getElementById(ee).style.display = "block";
+  var e=document.getElementById(c)
+  var x=document.getElementById(s)
+  //var url=this.arrBirds.IP +":"+this.arrBirds.port+"/users1/getdetails"
+
+  var url=this.arrBirds.IP +":"+this.arrBirds.port+"/users1/getdetails"+"/"+e.options[e.selectedIndex].value+"/"+x.options[x.selectedIndex].value
+  console.log(url)
+    this.http.get(url).subscribe (
+      (res:Response) =>{
+        this.tea=res.json();
+          // var teacherslist=this.teacher[0].First_Name;
+          console.log(this.tea)
+
+      }
+
+  )
+
+
+
+  }
     fetchsection=function(pro)
     {
       var hash={};

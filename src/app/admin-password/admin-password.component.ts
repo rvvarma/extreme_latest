@@ -20,7 +20,7 @@ console.log("hii")
       if(pwd.New_Password==pwd.Confirm_Password){
       var dat=JSON.stringify(pwd)
       console.log(dat)
-      var a={"School_Id":this.u[0].School_Id,"Id":this.u[0].Employee_Id,"Password":pwd.Confirm_Password,
+      var a={"School_Id":this.u[0].School_Id,"Id":this.u[0].School_Id,"Password":pwd.Confirm_Password,
          "type":"Admin","Email_id":this.u[0].Email_id}
 
   console.log(a)
