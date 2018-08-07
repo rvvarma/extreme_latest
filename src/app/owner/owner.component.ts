@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 
 import { Http } from '@angular/http';
-import { RouterModule, ActivatedRoute, Params} from '@angular/router';
+import { RouterModule, Router,ActivatedRoute, Params} from '@angular/router';
 
 
 import { Component, OnInit } from '@angular/core';
@@ -21,7 +21,7 @@ import {
 export class OwnerComponent implements OnInit {
   form: FormGroup;
 
-  constructor(private formBuilder: FormBuilder,private activatedRoute: ActivatedRoute,private http: Http,private httpService: HttpClient) {}
+  constructor(private formBuilder: FormBuilder,private router: Router,private activatedRoute: ActivatedRoute,private http: Http,private httpService: HttpClient) {}
   onClickSubmit(data) {
     }
 
@@ -39,7 +39,7 @@ export class OwnerComponent implements OnInit {
       schooladdress:  [null, Validators.required],
       newschooladdress:  [null, Validators.required],
         state: [null, Validators.required],
-      
+
 
 
 
@@ -78,8 +78,14 @@ export class OwnerComponent implements OnInit {
 var account=this.form.value;
       var url=this.arrBirds.IP+":"+this.arrBirds.port+"/users3/newadmin"
       this.http.post(url,account).toPromise()
-          .then(res => console.log(account,<any[]> res.json()))
-          .then(data => { return data; });
+          .then(res => console.log(account,<any[]> res.json())
+          alert("Check Your Email")
+          this.router.navigate(['/login']);
+        )
+          .then(data => { return data;
+
+
+           });
     } else {
       this.validateAllFormFields(this.form);
     }

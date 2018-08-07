@@ -252,7 +252,7 @@ path: 'teacherdashboard',
     TeacherpasswordComponent,
 
     AdminDetailsComponent,
-    AdminPasswordComponent,
+    AdminComponent,
     StudentDetailsFeePaymentComponent,
     RegistraionComponent,
     PDashboardComponent,

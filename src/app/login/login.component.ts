@@ -34,19 +34,19 @@ export class LoginComponent implements OnInit {
           this.School_Id = this.getCookie("School_Id");
           if(data.type=="Parent")
           {
-             this.router.navigate(['/parentdashboard']);
+             this.router.navigate(['/parentdashboard/parentdash']);
           }
           else if(data.type=="Teacher")
           {
             console.log("teacher")
 
-             this.router.navigate(['/teacherdashboard']);
+             this.router.navigate(['/teacherdashboard/tdashboard']);
           }
           else if(data.type=="Admin")
           {
             console.log("admin")
 
-             this.router.navigate(['/admindashboard']);
+             this.router.navigate(['/admindashboard/admindash']);
           }
         }
 

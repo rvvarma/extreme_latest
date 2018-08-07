@@ -30,6 +30,9 @@ export class  SchoolComponent implements OnInit {
       console.log(this.form);
       if (this.form.valid) {
         console.log('form submitted');
+        alert("Added Succesfully")
+        this.router.navigate(['/admindashboard/admin']);
+
       } else {
         this.validateAllFormFields(this.form);
       }

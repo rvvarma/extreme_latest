@@ -1,4 +1,64 @@
-<div class="materialContainer">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+  <div class="login-container-wrapper clearfix">
+    <div class="logo">
+      <i class="fa fa-sign-in"></i>
+    </div>
+    <div class="welcome"><strong>Welcome,</strong> please login</div>
+
+    <form  #f = "ngForm" (ngSubmit) = "onClickSubmit(f.value)" class="form-horizontal login-form">
+      <div class="form-group relative">
+        <input id="login_username" name="Id" id="name" class="form-control input-lg" type="email" placeholder="Username" required ngModel>
+        <i class="fa fa-user"></i>
+      </div>
+      <div class="form-group relative password">
+        <input id="login_password" class="form-control input-lg" name="Password" id="pass" type="password" placeholder="Password" required ngModel>
+        <i class="fa fa-lock"></i>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-success btn-lg btn-block">Login</button>
+      </div>
+      <div class="checkbox pull-left">
+        <label><input type="checkbox"> Remember</label>
+      </div>
+      <div class="checkbox pull-right">
+        <label> <a class="forget" href="" title="forget">Forgot your password</a> </label>
+      </div>
+    </form>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div class="materialContainer">
 
 
    <div class="box">
@@ -24,34 +84,7 @@
 
    </div>
 
-   <div class="overbox">
-      <div class="material-button alt-2"><span class="shape"></span></div>
-
-      <div class="title">REGISTER</div>
-
-      <div class="input">
-         <label for="regname">Username</label>
-         <input type="text" name="regname" id="regname">
-         <span class="spin"></span>
-      </div>
-
-      <div class="input">
-         <label for="regpass">Password</label>
-         <input type="password" name="regpass" id="regpass">
-         <span class="spin"></span>
-      </div>
-
-      <div class="input">
-         <label for="reregpass">Repeat Password</label>
-         <input type="password" name="reregpass" id="reregpass">
-         <span class="spin"></span>
-      </div>
-
-      <div class="button">
-         <button><span>NEXT</span></button>
-      </div>
 
 
    </div>
-
-</div>
+ -->

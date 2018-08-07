@@ -171,6 +171,8 @@ onSubmit=function(Teacher_Info) {
 
       .then(data => { return data; });
 //alert("successfully ADDED....!")
+alert("Added Succesfully")
+this.router.navigate(['/admindashboard/teacherlist']);
 
     }
 }//==============================================================================================================
