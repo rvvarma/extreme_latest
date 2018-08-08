@@ -64,7 +64,7 @@ export class ParentassignmentComponent implements OnInit {
            {
            this.a1=this.data[i];
          }
-         var c1="5";
+         var c1="1";
          var s1="B";
         var c=this.getCookie("class");
        var s=this.getCookie("section");
@@ -116,7 +116,7 @@ export class ParentassignmentComponent implements OnInit {
 
     ngOnInit()
     {
-      var c1="5"
+      var c1="1"
       var s1="B"
       var c=this.getCookie("class");
       var s=this.getCookie("section");

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { Response,Headers} from '@angular/http';
 import { RouterModule, ActivatedRoute, Params} from '@angular/router';
-import { RouterModule, Router, Params} from '@angular/router';
+import { RouterModule, router, Params} from '@angular/router';
 import { CookieService } from 'angular2-cookie/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpErrorResponse } from '@angular/common/http';
@@ -56,9 +56,7 @@ this.http.post(url,ttt).subscribe(
 (res:Response)=>{
 this.ttt=res.json();
 console.log(res.json());
-alert("Added Succesfully")
 
-this.router.navigate(['/teacherdashboard/fetchteacherclass']);
 }
 )
 

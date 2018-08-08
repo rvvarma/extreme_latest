@@ -81,9 +81,9 @@ export class CalenderComponent implements OnInit  {
            this.arrBirds = data as string [];	 // FILL THE ARRAY WITH DATA.
 
             console.log(this.arrBirds.IP +":"+this.arrBirds.port+"vsjdncv")
-            console.log(this.arrBirds.IP +":"+this.arrBirds.port+"/filter/2/B/"+year+","+month+",1/"+year+","+month+","+daysInMonth(month,year))
+            console.log(this.arrBirds.IP +":"+this.arrBirds.port+"/filter/1/B/"+year+","+month+",1/"+year+","+month+","+daysInMonth(month,year))
 
-      this.httpService.get(this.arrBirds.IP +":"+this.arrBirds.port+"/filter/5/B/"+year+","+month+",1/"+year+","+month+","+daysInMonth(month,year)).subscribe(
+      this.httpService.get(this.arrBirds.IP +":"+this.arrBirds.port+"/filter/1/B/"+year+","+month+",1/"+year+","+month+","+daysInMonth(month,year)).subscribe(
         datas => {
           this.arrBirds = datas
 
@@ -97,7 +97,7 @@ export class CalenderComponent implements OnInit  {
    var str = datass.created;
       var res = str.split("T");
 
-  //this.P.push({start:res[0],title:"present"})
+  this.P.push({start:res[0],title:"present"})
 
 
 

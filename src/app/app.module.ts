@@ -27,7 +27,7 @@ import { TeacherStudentListComponent } from './teacher-student-list/teacher-stud
 import { AssignclasstostudentComponent } from './assignclasstostudent/assignclasstostudent.component';
 import { FetchTeacherClassComponent } from './fetch-teacher-class/fetch-teacher-class.component';
 import { PercentageviewComponent } from './percentageview/percentageview.component';
-
+//
 import { FullCalendarModule } from 'ng-fullcalendar';
 import { CalenderComponent } from './calender/calender.component';
 import { AttendanceviewforadminComponent } from './attendanceviewforadmin/attendanceviewforadmin.component';
@@ -252,7 +252,6 @@ path: 'teacherdashboard',
     TeacherpasswordComponent,
 
     AdminDetailsComponent,
-    AdminComponent,
     StudentDetailsFeePaymentComponent,
     RegistraionComponent,
     PDashboardComponent,
@@ -264,6 +263,7 @@ path: 'teacherdashboard',
     AccountComponent,
     TeacherComponent,
     FieldErrorDisplayComponent,
+     AdminPasswordComponent,
 
     FeeregisterComponent,
 

@@ -103,7 +103,7 @@ export class AccountComponent implements OnInit {
                   .then(res => console.log(acc,<any[]> res.json()))
                   .then(data => { return data; });
                   alert("Added Succesfully")
-                  this.router.navigate(['/admindashboard/admin']);
+                  this.router.navigate(['/admindashboard']);
 
     } else {
       this.validateAllFormFields(this.form);

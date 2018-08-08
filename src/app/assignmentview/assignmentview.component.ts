@@ -18,6 +18,7 @@ export class AssignmentviewComponent implements OnInit {
     class=[];
     student=[];
     stu=[];
+    sdf=[];
     cln:any;
     sln:any
     sub:any;
@@ -54,12 +55,16 @@ export class AssignmentviewComponent implements OnInit {
 
           console.log(this.cln)
 
-  this.student.push(this.cln)
+  this.sdf.push(this.cln)
 
   }
-  console.log(this.student)
+
+  var uniqueItems = Array.from(new Set(this.sdf))
+  console.log("checking "+uniqueItems)
+
+this.student=uniqueItems;
   })
-  }
+	}
 
 
 
@@ -97,6 +102,7 @@ export class AssignmentviewComponent implements OnInit {
   }
     fetchsection=function(pro)
     {
+      var m=""
       var hash={};
       this.section=[]
       var url=this.arrBirds.IP +":"+this.arrBirds.port+"/users1/class/"+this.id
@@ -113,8 +119,9 @@ export class AssignmentviewComponent implements OnInit {
 
            if(hash[this.cln])
            {
-             m=hash[this.cln];
+          m=hash[this.cln];
             m=m+","+data1[i].Section;
+            console.log(m+"sec1")
             hash[this.cln]=m;
             //this.sln=hash[pro];
             //this.section.push(this.sln)
@@ -126,7 +133,9 @@ export class AssignmentviewComponent implements OnInit {
            else
            {
               hash[this.cln]=data1[i].Section;
-              this.sln=hash[pro];
+              console.log(data1[i].Section+"section")
+              console.log(hash[this.cln]+"sec")
+              this.sln=hash[this.cln];
 
 
            }
@@ -163,9 +172,9 @@ export class AssignmentviewComponent implements OnInit {
            for(var i in data2)
           {
              this.cln=data2[i].Class;
-            if(hash[this.cln])
+            if(hash[this.cln+""+data2[i].Section])
             {
-              m1=hash[this.cln];
+              m1=hash[this.cln+""+data2[i].Section];
              m1=m1+","+data2[i].Subject;
              hash[this.cln]=m1;
 
@@ -177,7 +186,8 @@ export class AssignmentviewComponent implements OnInit {
             else
             {
 
-               hash[this.cln]=data2[i].Subject;
+               hash[this.cln+""+data2[i].Section]=data2[i].Subject;
+            //   console.log(data2[i].Subject+"subject")
 
 
 
@@ -186,7 +196,10 @@ export class AssignmentviewComponent implements OnInit {
           }
 
           var f=document.getElementById('class').value;
-         this.sub1=hash[f].split(",");
+          var s=document.getElementById('section').value;
+         this.sub1=hash[f+s].split(",");
+
+         console.log("checking subjects "+this.sub1)
           this.subject.push(this.sub1)
 
       }
