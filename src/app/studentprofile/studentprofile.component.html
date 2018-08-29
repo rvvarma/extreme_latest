@@ -1,0 +1,140 @@
+<form  #Data = "ngForm" (ngSubmit) = "onSubmit(Data.value)">
+
+<h2>STUDENT  DETAILS</h2>
+
+
+
+
+<div *ngFor ="let st of stu" >
+<img src="http://13.232.165.2:3000/uploads/{{st.photo}}" ><br>
+<label for="filePicker">Choose a image:</label><br>
+<input type="file" id="filePicker" (change)="handleFileSelect($event)" name="file"  accept="image/jpeg" ngModel>
+
+
+<label>studentid</label>
+<inline-input-edit
+    [(ngModel)]="st.stid"
+    name="stid"
+    [required]="true"
+    [prefix]="'<b>$</b>&nbsp;'"
+    [changed]="onChange"
+    ([value])="l" >
+</inline-input-edit>
+
+<label>firstname</label>
+<inline-input-edit
+[(ngModel)]="st.firstname"
+   name="firstname"
+    [required]="true"
+    [prefix]="'<b>$</b>&nbsp;'"
+    [changed]="onChange1"
+    ([value])="1" ngModel>
+</inline-input-edit>
+
+<label>lastname</label>
+<inline-input-edit
+   [(ngModel)]="st.lastname"
+   name="lastname"
+    [required]="true"
+    [prefix]="'<b>$</b>&nbsp;'"
+    [changed]="onChange2"
+    ([value])="1" ngModel>
+</inline-input-edit>
+
+<label>mothername</label>
+<inline-input-edit
+  [(ngModel)]="st.mothername"
+   name="mothername"
+    [required]="true"
+    [prefix]="'<b>$</b>&nbsp;'"
+    [changed]="onChange3"
+    ([value])="1" ngModel>
+</inline-input-edit>
+
+<label>fathername</label>
+<inline-input-edit
+  [(ngModel)]="st.fathername"
+   name="fathername"
+    [required]="true"
+    [prefix]="'<b>$</b>&nbsp;'"
+    [changed]="onChange4"
+    ([value])="1"ngModel >
+</inline-input-edit>
+
+<label>gardian</label>
+<inline-input-edit
+  [(ngModel)]="st.guardian"
+   name="guardian"
+    [required]="true"
+    [prefix]="'<b>$</b>&nbsp;'"
+    [changed]="onChange5"
+    ([value])="1" ngModel>
+</inline-input-edit>
+
+<label>phonenumber</label>
+<inline-input-edit
+  [(ngModel)]="st.phonenumber"
+   name="phonenumber"
+    [required]="true"
+    [prefix]="'<b>$</b>&nbsp;'"
+    [changed]="onChange6"
+    ([value])="1" ngModel>
+</inline-input-edit>
+
+<label>emailid</label>
+<inline-input-edit
+[(ngModel)]="st.emailid"
+   name="emailid"
+    [required]="true"
+    [prefix]="'<b>$</b>&nbsp;'"
+    [changed]="onChange7"
+    ([value])="1" ngModel>
+</inline-input-edit>
+
+<label>bloogroup</label>
+<inline-input-edit
+[(ngModel)]="st.bloogroup"
+   name="bloogroup"
+    [required]="true"
+    [prefix]="'<b>$</b>&nbsp;'"
+    [changed]="onChange8"
+    ([value])="1" ngModel>
+</inline-input-edit>
+
+<label>address</label>
+<inline-input-edit
+[(ngModel)]="st.address"
+   name="address"
+    [required]="true"
+    [prefix]="'<b>$</b>&nbsp;'"
+    [changed]="onChange9"
+    ([value])="1" ngModel>
+</inline-input-edit>
+
+<label>School_Id</label>
+<inline-input-edit
+[(ngModel)]="st.School_Id"
+   name="schoolid"
+    [required]="true"
+    [prefix]="'<b>$</b>&nbsp;'"
+    [changed]="onChange10"
+    ([value])="1" ngModel>
+</inline-input-edit>
+
+<label>admissionnumber</label>
+<inline-input-edit
+[(ngModel)]="st.admissionnumber"
+   name="admissionnumber"
+    [required]="true"
+    [prefix]="'<b>$</b>&nbsp;'"
+    [changed]="onChange10"
+    ([value])="1" ngModel>
+</inline-input-edit>
+
+
+</div>
+<!--<button class="btn btn-primary" (click)="onSubmit(st.firstname,st.lastname)">submit1</button>-->
+
+
+<input type="submit" value="submit">
+</form>

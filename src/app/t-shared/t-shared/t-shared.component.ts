@@ -10,7 +10,7 @@ export interface RouteInfo {
 
 export const ROUTES: RouteInfo[] = [
     { path: 'tdashboard', title: 'Dashboard',  icon: 'ti-panel', class: '' },
-    { path: 'user', title: 'User Profile',  icon:'ti-user', class: '' },
+    { path: 'editprofile', title: 'User Profile',  icon:'ti-user', class: '' },
     { path: 'fetchteacherclass', title: 'Attendance',  icon:'ti-view-list-alt', class: '' },
     { path: 'assignment', title: 'Assignments',  icon:'ti-text', class: '' },
 

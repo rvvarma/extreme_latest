@@ -32,8 +32,7 @@ import { FullCalendarModule } from 'ng-fullcalendar';
 import { CalenderComponent } from './calender/calender.component';
 import { AttendanceviewforadminComponent } from './attendanceviewforadmin/attendanceviewforadmin.component';
 import { AddteacherComponent } from './addteacher/addteacher.component';
-import { FooComponent } from './foo/foo.component';
-import { Foo1Component } from './foo1/foo1.component';
+
 import { GetStartComponent } from './get-start/get-start.component';
 import { OwnerDetailsComponent } from './owner-details/owner-details.component';
 import { RegisterComponent } from './register/register.component';
@@ -66,7 +65,6 @@ import { PDashboardComponent } from './p-dashboard/p-dashboard.component';
 import { TDashboardComponent } from './t-dashboard/t-dashboard.component';
 import { TSharedModule } from './t-shared/t-shared.module';
 import { PSharedModule } from './p-shared/p-shared.module';
-import { AssignmentTabsComponent } from './assignment-tabs/assignment-tabs.component';
 import {NgbTabsetConfig} from './tabset-config';
 import { NgbdDropdownBasic } from './dropdown-basic';
 import { ParentassignmentComponent } from './parentassignment/parentassignment.component';
@@ -79,6 +77,12 @@ import { SchoolComponent } from './school/school.component';
 import { FeeregisterComponent } from './feeregister/feeregister.component';
 import { ParentaccountsComponent } from './parentaccounts/parentaccounts.component';
 import { CheckComponent } from './check/check.component';
+import { EditprofileComponent } from './editprofile/editprofile.component';
+
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { InlineEditModule } from '@savantly/ngx-inline-edit';
+import { StudentprofileComponent } from './studentprofile/studentprofile.component';
 
 
 
@@ -135,7 +139,7 @@ var schoolroots: Routes = [
       },
       {  path:'class',component:    ClassComponent
 
-      },
+    },
       {
         path:'teacherlist'
         ,component: AssignTeacherClassListComponent
@@ -168,9 +172,7 @@ path: 'teacherdashboard',
         {
                 path:'tdashboard', component:TDashboardComponent
               },
-              {  path:'assignmenttabs',component:    AssignmentTabsComponent
 
-              },
         {
           path:'assignment', component:AssignmentviewComponent
         },
@@ -185,6 +187,11 @@ path: 'teacherdashboard',
                                {
                                  path:'percentage', component:PercentageviewComponent
                                },
+
+
+                               {
+                                  path:'editprofile', component:EditprofileComponent
+                                },
 
       ]
       {
@@ -212,6 +219,9 @@ path: 'teacherdashboard',
                   {
                       path:'parentaccount',component: ParentaccountsComponent
                   },
+                  {
+                      path:'studentprofile',component: StudentprofileComponent
+                  },
 
 
             ]
@@ -231,8 +241,7 @@ path: 'teacherdashboard',
     CalenderComponent,
     AttendanceviewforadminComponent,
     AddteacherComponent,
-    FooComponent,
-    Foo1Component,
+
 
     GetStartComponent,
     OwnerDetailsComponent,
@@ -256,7 +265,6 @@ path: 'teacherdashboard',
     RegistraionComponent,
     PDashboardComponent,
     TDashboardComponent,
-    AssignmentTabsComponent,
     ParentassignmentComponent,
     ADashboardComponent,
     OwnerComponent,
@@ -269,7 +277,11 @@ path: 'teacherdashboard',
 
     ParentaccountsComponent,
 
-    CheckComponent
+    CheckComponent,
+
+    EditprofileComponent,
+
+    StudentprofileComponent
 
 
     ],
@@ -291,7 +303,8 @@ path: 'teacherdashboard',
     FixedPluginModule,
     TSharedModule,
     PSharedModule,
-
+    BrowserAnimationsModule,
+       InlineEditModule,
 
 
     RouterModule.forChild(schoolroots) ,
@@ -328,10 +341,7 @@ path: 'teacherdashboard',
            path: 'admin',component:  AssignclasstostudentComponent
 
                  },
-                 {
-                      path: 'registration',component:  OwnerDetailsComponent
 
-                            },
       {
         path:'teacherdashboard/studentlist' ,component: TeacherStudentListComponent
       },
@@ -376,9 +386,6 @@ path: 'teacherdashboard',
 },
 
 
-{  path:'schoolregistration',component:    SchoolComponent
-
-},
 
 
 
@@ -463,9 +470,7 @@ path: 'teacherdashboard',
         }
 
         ,
-        {  path:'assignmenttabs',component:    AssignmentTabsComponent
 
-        },
         {
                 path:'tdashboard', component:TDashboardComponent
               },

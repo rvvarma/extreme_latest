@@ -1,0 +1,95 @@
+
+<form  #Data = "ngForm" (ngSubmit) = "onSubmit(Data.value)">
+
+<h2>TEACHER DETAILS</h2>
+
+
+<div *ngFor ="let st of sub" >
+<img src="http://13.232.165.2:3000/uploads/{{st.image}}" ><br>
+<label for="filePicker">Choose a image:</label><br>
+<input type="file" id="filePicker" (change)="handleFileSelect($event)" name="file"  accept="image/jpeg" ngModel>
+
+
+
+<label>firstname</label>
+<inline-input-edit
+    [(ngModel)]="st.firstname"
+    name="fname"
+    [required]="true"
+    [prefix]="'<b>$</b>&nbsp;'"
+    [changed]="onChange"
+    ([value])="l" >
+</inline-input-edit>
+
+<label>lastname</label>
+<inline-input-edit
+[(ngModel)]="st.lastname"
+   name="lname"
+    [required]="true"
+    [prefix]="'<b>$</b>&nbsp;'"
+    [changed]="onChange1"
+    ([value])="1" ngModel>
+</inline-input-edit>
+
+<label>teacherid</label>
+<inline-input-edit
+   [(ngModel)]="st.id"
+   name="id"
+    [required]="true"
+    [prefix]="'<b>$</b>&nbsp;'"
+    [changed]="onChange11"
+    ([value])="1" ngModel>
+</inline-input-edit>
+
+<label>Experience</label>
+<inline-input-edit
+  [(ngModel)]="st.experience"
+   name="experience"
+    [required]="true"
+    [prefix]="'<b>$</b>&nbsp;'"
+    [changed]="onChange2"
+    ([value])="1" ngModel>
+</inline-input-edit>
+
+<label>Address</label>
+<inline-input-edit
+  [(ngModel)]="st.address"
+   name="address"
+    [required]="true"
+    [prefix]="'<b>$</b>&nbsp;'"
+    [changed]="onChange3"
+    ([value])="1"ngModel >
+</inline-input-edit>
+
+<label>phonenumber</label>
+<inline-input-edit
+  [(ngModel)]="st.phonenumber"
+   name="phonenumber"
+    [required]="true"
+    [prefix]="'<b>$</b>&nbsp;'"
+    [changed]="onChange4"
+    ([value])="1" ngModel>
+</inline-input-edit>
+
+
+
+<label>emailid</label>
+<inline-input-edit
+[(ngModel)]="st.emailid"
+   name="emailid"
+    [required]="true"
+    [prefix]="'<b>$</b>&nbsp;'"
+    [changed]="onChange6"
+    ([value])="1" ngModel>
+</inline-input-edit>
+
+
+
+
+
+<!--<button class="btn btn-primary" (click)="onSubmit(st.firstname,st.lastname)">submit1</button>-->
+</div>
+
+
+<input type="submit" value="submit">
+</form>

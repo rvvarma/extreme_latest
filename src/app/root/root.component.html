@@ -41,6 +41,23 @@ body {font-family: Arial;}
     border: 1px solid #ccc;
     border-top: none;
 }
+
+
+h1 {
+  font-size:3em;
+  font-weight: 300;
+  line-height:1em;
+  text-align: center;
+  color: #4DC3FA;
+}
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+margin-left: inherit;
+margin: 20px;}
 </style>
 </head>
 <body>
@@ -53,18 +70,18 @@ body {font-family: Arial;}
 <div class="content">
 
 
-  <H2> Class Details </H2>
+  <h1> Class Details </h1>
 
 
 
-
+<div class="row">
 <label>CLASS </label>
   <select  name="Class" id="class" ngModel >
       <option value="0">CLASSES</option>
       <option *ngFor="let classes of teacher" value={{classes.Class}}>
           {{classes.Class}}
       </option>
-  </select><br>
+  </select>&nbsp;
 
 
   <label>SECTION</label>
@@ -74,7 +91,7 @@ body {font-family: Arial;}
           {{sections.Section}}
       </option>
   </select><br>
-
+</div>
 
 
 <div class="tab">
@@ -82,16 +99,16 @@ body {font-family: Arial;}
   <button (click)="openCity('event', 'Paris','class','section');" (click)="openLock('class','section');">STUDENT LIST</button></div>
   <div id="London" class="tabcontent">
 
-  <table>
+  <table id="customers" class="container1">
     <tr>
-      <th>TEACHER NAME</th>
+      <th>TEACHER Id</th>
       <th>SUBJECT</th>
       <th>TEACHER TYPE</th>
 
     </tr>
     <tr *ngFor="let teachers of tea"  >
 
-      <td >{{teachers.Teacher_Name}}</td>
+      <td >{{teachers.Teacher_Id}}</td>
       <td>{{teachers.Subject}}</td>
       <td>{{teachers.Teacher_Type}}</td>
       </tr>
@@ -99,7 +116,7 @@ body {font-family: Arial;}
   </table></div>
   <div id="Paris" class="tabcontent">
 
-  <table>
+  <table id="customers" class="container1">
     <tr>
       <th>STUDENT ID</th>
     </tr>
