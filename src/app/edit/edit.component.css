@@ -1,0 +1,103 @@
+select {
+    width: 250px;
+    height: 30px;
+}
+select:focus {
+    min-width: 350px;
+    width: auto;
+}
+h2{
+  font-size: 25px;
+  text-align: center;
+padding-right:  200px;
+font-weight: bold;
+font-style: oblique;
+}
+.button3 {
+    background-color:  #f44336;
+    color: white;
+    border: 2px solid #f44336;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 17px;
+    position:relative;
+    padding: 12px 32px;
+
+}
+
+.button3:hover {
+    background-color:white;
+    color:  #f44336;
+}
+.button1 {
+    background-color:#4CAF50 ;
+    color: White;
+    border: 2px solid #4CAF50;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 17px;
+    position:center;
+    padding: 12px 32px;
+
+}
+
+.button1:hover {
+    background-color:white ;
+    color: #4CAF50;
+}
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  margin: 0 -16px;
+}
+.col-50 {
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+}
+.container {
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+  width:auto;
+}
+
+
+
+input[type=text] {
+  width: 350px;
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.col-75 {
+  -ms-flex: 55%; /* IE10 */
+  flex: 55%;
+}
+
+.col-50,
+.col-75 {
+  padding: 0 16px;
+}
+.button4 {
+    background-color:#4CAF50 ;
+    color: White;
+    border: 2px solid #4CAF50;
+    width: 20%;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 17px;
+    position:relative;
+    left:250px;
+    padding: 12px 32px;
+
+}
+
+.button4:hover {
+    background-color:white ;
+    color: #4CAF50;
+}

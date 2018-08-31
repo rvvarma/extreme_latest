@@ -105,7 +105,7 @@ h2 a {
   padding-left:2%;
 }
 
-/* Background-color of the odd rows */
+/* Background-color of the odd s */
 .container1 tr:nth-child(odd) {
 	  background-color: #fff;
 }

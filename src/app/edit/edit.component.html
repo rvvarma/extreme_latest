@@ -1,18 +1,45 @@
 
 
 
-
+<div class="container ">
+  <h2>Configuration</h2>
 <form #data="ngForm" (ngSubmit)="onSubmit(data.value)" >
-  <label>TERMS</label>
+  <div class="row">
+    <div class="col-50">
 
+      <div class=" col-md-offset-1 col-sm-offset-1">
+
+  <label>TERMS</label>
+<br>
   <select  name="TERMS" [(ngModel)]="sub" >
     <option *ngFor="let sections of terms" value={{sections}}>
         {{sections}}
     </option>
 </select>
-  FEE:<input type="text" value="s" name="fee" [(ngModel)]="s" >
+<br><br>
 
-  STUDENT LIMIT:<input type="text" name="studentlimit" [(ngModel)]="l" >
+<label>  FEE:</label>
+<br>
+<input type="text" value="s" name="fee" [(ngModel)]="s" >
+<br>
+<table id="tableid" >
+  <tr>
+       <th>SECTION</th>
+
+
+
+  </tr>
+  <tr *ngFor="let teachers of section" let i = index >
+
+   <td><input type="text" value="{{this.teachers}}" name="sections" id="sections"> </td>
+</tr>
+</table>
+<button class="button1" type="button" (click)="addFieldValue()">Add</button>
+
+
+            <button class="button3"  type="button"  (click)="deleteFieldValue(i)">Delete</button>
+
+
   <!--<label>SECTION</label>
   <select  name="Section" [(ngModel)]="c" >
       <option *ngFor="let sections of section" >
@@ -43,46 +70,42 @@
      SUBJECT:<input type="text" value="subjects"  name="subjects" [(ngModel)]="d" ><br></div>
      </div><input type='button' value='Add Subject' id='addButton'>
      <input type='button' value='Remove Subject' id='removeButton'>-->
-     <table id="tableid" >
-       <tr>
-            <th>sections</th>
-            <th>DELETE</th>
+</div>
+</div>
+     <div class="col-50">
+
+
+       <div class=" col-md-offset-1 col-sm-offset-1">
+         <label>STUDENT LIMIT:</label><br>
+       <input type="text" name="studentlimit" [(ngModel)]="l" >
 
 
 
-       </tr>                <button class="btn btn-default" type="button" (click)="addFieldValue()">Add</button>
-
-       <tr *ngFor="let teachers of section" let i = index >
-
-        <td><input type="text" value="{{this.teachers}}" name="sections" id="sections"> </td>
-        <td>
-            <button class="btn btn-default"  type="button"  (click)="deleteFieldValue(i)">Delete</button>
-        </td>
-</tr>
-
-
-     </table>
      <table id="tableid" >
             <tr>
                  <th>SUBJECTS</th>
-                 <th>DELETE</th>
 
 
 
-            </tr>                <button class="btn btn-default" type="button" (click)="addFieldValues()">Add</button>
+            </tr>
 
             <tr *ngFor="let teachers of subjects" let i = index >
 
              <td><input type="text" value="{{this.teachers}}" name="subjects" id="subjects"> </td>
-             <td>
-                 <button class="btn btn-default"  type="button" (click)="deleteFieldValues(i)">Delete</button>
-             </td>
-     </tr>
+           </tr>
 
 
-          </table>
+                </table>
+                   <button class="button1" type="button" (click)="addFieldValues()">Add</button>
+                 <button class="button3"  type="button" (click)="deleteFieldValues(i)">Delete</button>
+</div>
+</div>
+</div>
+<br>
+<br>
 
-<input type="submit" value="update" >
+<input class="button4" type="submit" value="update" >
 
  </form>
- 
+
+</div>

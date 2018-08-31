@@ -22,7 +22,6 @@ export const ROUTES: RouteInfo[] = [
     { path: 'classdetails', title: 'Class Details',  icon:'ti-pencil-alt2', class: '' },
     { path: 'accountregistration', title: 'Student Registraions',  icon:'ti-user', class: '' },
     { path: 'teacherregistration', title: ' Teacher Registraions',  icon:'ti-user', class: '' },
-{ path: 'feeregistration', title: 'Accounts',  icon:'ti-bell', class: '' },
 
 ];
 

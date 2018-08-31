@@ -59,9 +59,6 @@
 
 
 
-  <th (click)="sort('guardian')">Guardian name
-    <span class="glyphicon sort-icon" *ngIf="key =='fathername'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
-  </th>
 
 
   <th (click)="sort('phonenumber')">Phone number
@@ -74,21 +71,8 @@
   </th>
 
 
-  <th (click)="sort('class')">Class
-    <span class="glyphicon sort-icon" *ngIf="key =='class'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
-  </th>
 
-
-
-  <th (click)="sort('bloogroup')">Blood group
-    <span class="glyphicon sort-icon" *ngIf="key =='bloogroup'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
-  </th>
-
-  <th (click)="sort('address')">Address
-    <span class="glyphicon sort-icon" *ngIf="key =='address'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
-  </th>
-
-<th>   Edit</th>
+<th>  ADD</th>
 
 
 <th>   Delete</th>
@@ -102,12 +86,9 @@
 
     <td>{{st.stid}}</td>
     <td>{{st.name}}</td>
-    <td>{{st.guardian}}</td>
     <td>{{st.phonenumber}}</td>
     <td>{{st.mailid}}</td>
-    <td>{{st.class}}</td>
-    <td>{{st.bloogroup}}</td>
-    <td>{{st.address}}</td>
+
 
 
 <td>

@@ -255,16 +255,16 @@ console.log("dsvsdvsd" +this.bankName)
 }
 
   onSubmit=function(Teacher_Name) {
-    alert(JSON.stringify(Teacher_Name))
+//alert(JSON.stringify(Teacher_Name))
      var bankName = this.route.snapshot.params['id'];
-
-
+console.log(Teacher_Name)
+var final=JSON.stringify(Teacher_Name)
+alert(final
+)
     if(confirm("ARE U SURE FOR UPDATE?"))
     {
-      alert(Teacher_Name.Teacher_Id)
-      var tname=Teacher_Name.Teacher_Id;
-      console.log(tname)
-var url=this.arrBirds.IP +":"+this.arrBirds.port+"/users1/u/bankName";
+
+var url=this.arrBirds.IP +":"+this.arrBirds.port+"/users1/updates/"+bankName;
 console.log(url)
      // const url="http://10.10.5.54:3004/u"+"/"+bankName;
       //const url="http://10.10.5.54:3004/post";

@@ -134,7 +134,9 @@ tr
     }
 
     .btn:hover {
-      background-color: #45a049;
+      background-color: white;
+      color: #4CAF50;
+      
     }
 
     a {

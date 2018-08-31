@@ -4,9 +4,10 @@
 
 
   <button (click)="GetAssignments('date')">Get Assignments</button>
-<table color='blue'>
+<table class="container1">
   <thead>
 
+    <th>date</th>
 
     <th>teacherid</th>
     <th>class</th>
@@ -15,8 +16,7 @@
    <th>title</th>
    <th>description</th>
    <th>filetype</th>
-   <th>date</th>
-  <th>filedownload</th>
+  <th>file</th>
 
 
  </thead>
@@ -24,7 +24,8 @@
 <tbody>
 <tr *ngFor ="let a of sub" >
 
-
+  <td>{{a.date}}</td>
+ 
   <td>{{a.teacherid}}</td>
   <td>{{a.class}}</td>
   <td>{{a.section}}</td>
@@ -32,8 +33,7 @@
   <td>{{a.title}}</td>
   <td>{{a.description}}</td>
   <td>{{a.filetype}}</td>
-  <td>{{a.date}}</td>
-  <td><button class="btn btn-primary" (click)="downloadFile(a.id)">Download</button>
+  <td><button class="btn btn-primary" (click)="downloadFile(a.id)"><span class="glyphicon glyphicon-download-alt"></span></button>
  </td>
 
   </tr>

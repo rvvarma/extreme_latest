@@ -1,8 +1,9 @@
-<div class="tea">
+<div class="container">
+  <h2>  Teacher Classes  </h2>
   <form #data="ngForm" (ngSubmit)="onSubmit(data.value)" >
 
   <label>Class </label>
-
+<br>
   <select name="Class"  [(ngModel)]="cl" >
 
 
@@ -10,8 +11,9 @@
           {{classes.classes.classname}}
       </option>
   </select >
-
+<br>  <br>
   <label>Section</label>
+<br>
 <select  name="Section" [(ngModel)]="sec">
 
 
@@ -20,8 +22,12 @@
       </option></select>
 
 
-
+      <br>
+  <br>
   <label>Subject</label>
+
+  <br>
+
  <select  name="Subject"  [(ngModel)]="sub">
 
 
@@ -31,10 +37,12 @@
             </select>
 
 
+            <br>
+            <br>
 
 
 
-<input type="submit" value="update" >
+<input class="button4" type="submit" value="update" >
 
  </form>
 </div>

@@ -31,17 +31,21 @@ export class RootComponent implements OnInit {
   class=[];
   tea=[];
   stu=[];
+  section=[];
+
     constructor(private http: Http, private router: Router, private route: ActivatedRoute,private httpService: HttpClient) { }
   fetchclass=function()
   {
-    var url=this.arrBirds.IP +":"+this.arrBirds.port+"/users1/fetch"
+    var url=this.arrBirds.IP+":"+this.arrBirds.port+"/getClass"
 
 
 console.log(url)
     this.http.get(url).subscribe (
         (res:Response) =>{
           this.teacher=res.json();
-            // var teacherslist=this.teacher[0].First_Name;
+            // var
+
+            list=this.teacher[0].First_Name;
           console.log(this.teacher)
 
 
@@ -49,6 +53,49 @@ console.log(url)
 
         }
       )
+  }
+  fetchsection=function(pro)
+  {
+    console.log(pro)
+    var hash={};
+    var url=this.arrBirds.IP+":"+this.arrBirds.port+"/getClass"
+
+
+    console.log(url)
+    this.http.get(url).subscribe (
+        (res:Response) =>{
+          var data=res.json();
+            // var
+           console.log(data)
+              for(var i in data)
+              {
+                 hash[data[i].classes.classname]=data[i].classes.sections
+
+              }
+
+           this.section=hash[pro];
+
+           console.log(this.section)
+           console.log(hash)
+
+
+
+
+        }
+      )
+
+      /*   var data = this.class;
+console.log(data)
+         for(var i in data)
+         {
+              var id = data[i].classes.classid;
+            hash[data[i].classes.classname]=data[i].classes.sections
+         }
+
+  this.section=hash[pro]
+console.log(this.section)
+      }
+    )*/
   }
 
   fetchsubjects=function(pro)
@@ -86,7 +133,7 @@ console.log(url)
     this.http.get(url).subscribe (
       (res:Response) =>{
         this.tea=res.json();
-          // var teacherslist=this.teacher[0].First_Name;
+          //var teacherslist=this.teacher[0].First_Name;
           console.log(this.tea)
 
       }

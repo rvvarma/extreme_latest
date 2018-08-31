@@ -4,7 +4,7 @@
 
 <form #f = "ngForm" (ngSubmit) = "onClickSubmit(f.value)" >
 
-
+Class:
 <select (change)="fetchClass($event.target.value)" id="class">
 <option value=0>Class<option>
   <option *ngFor ="let c of Class" value="{{c}}">
@@ -12,7 +12,7 @@
   </option>
 </select>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<button (click)="percentage()"   [routerLink]="['/teacherdashboard/percentage']">percentage</button>
+<button class="button1"(click)="percentage()"   [routerLink]="['/teacherdashboard/percentage']">percentage</button>
 
 </form>
 

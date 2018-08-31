@@ -7,6 +7,32 @@
   font-weight: bold;
 
 }
+h2{
+  font-size: 25px;
+  text-align: center;
+padding-right:  200px;
+font-weight: bold;
+font-style: oblique;
+}
+select {
+    width: 200px;
+    height: 30px;
+    left:200;
+}
+select:focus {
+    min-width: 200px;
+    width: auto;
+}
+
+.container {
+  background-color: white;
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+  width:auto;
+  font-size: 25px;
+}
+
 .h{
    font-size:48px;
 color:  #4CAF50;
@@ -17,7 +43,7 @@ color:  #4CAF50;
     width: 700px;
     height: 300px;
     border: 5px solid #c3c3c3;
-    
+
 
 }
 #class{
@@ -43,8 +69,21 @@ padding-top:20px;
   margin-left:80px;
 }
 
-.update{
-  padding-left:250px;
-padding-top: 50px;
+.button4 {
+    background-color:#4CAF50 ;
+    color: White;
+    border: 2px solid #4CAF50;
+    width: 20%;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 17px;
+    position:relative;
+    left:250px;
+    padding: 12px 32px;
 
+}
+
+.button4:hover {
+    background-color:white ;
+    color: #4CAF50;
 }
