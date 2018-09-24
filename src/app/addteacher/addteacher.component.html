@@ -30,28 +30,40 @@ padding-top: 10px;
         }
 
         </style>
+        <script>
 
+            var app = angular.module("app", []);
+            app.controller("RadioController", function ($scope) {
+
+                $scope.Gender = "Male";
+
+                $scope.RadioChange = function (s) {
+                    $scope.GenderSelected = s;
+                };
+            });
+
+        </script>
 <body>
 
   <div class="container">
-
-  <h2 > Add New  Teacher   </h2>
-  <form  #data="ngForm" (ngSubmit)="onSubmit(data.value)">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a [routerLink]="['/admindashboard/teacherlist']">Teachers List </a>
+      </li>
+      <li class="breadcrumb-item active">Assign Teacher</li>
+    </ol>
+  <h1 > Add New  Teacher   </h1>
+  <form  #data="ngForm"  (ngSubmit)="onSubmit(data.value)" action="/action_page.php">
 
 
       <div class="row">
               <div class="col-50">
                 <div class="col-md-12 col-md-offset-3">
-
-          <label>  SCHOOL ID:</label>
-<br>
-          <input type="text" name="School_Id"  ngModel>
-<br>
     <label>TEACHER ID </label>
 <br>
-    <select  (change)="fetchclass($event.target.value)"  name="Teacher_Id" ngModel >
+    <select  (change)="fetchstudentid($event.target.value)"  name="Teacher_Id" ngModel >
             <option value="0" ></option>
-            <option *ngFor="let classes of teacherid" value={{classes.Teacher_Id}} >
+            <option *ngFor="let classes of teacher" value={{classes.Teacher_Id}} >
                 {{classes.Teacher_Id}}
             </option>
         </select><br>
@@ -68,12 +80,6 @@ padding-top: 10px;
           {{classes.classes.classname}}
       </option>
   </select><br>
-
-
-
-</div>
-</div>
-            <div class="col-50">
   <label>SECTION</label>
 <br>
   <select (change)="fetchsubjects($event.target.value)" name="Section" ngModel>
@@ -85,6 +91,12 @@ padding-top: 10px;
 
 
 
+</div>
+</div>
+            <div class="col-50">
+
+
+
 
   <label>SUBJECT</label>
 <br>
@@ -93,13 +105,17 @@ padding-top: 10px;
       <option *ngFor="let sec of subjects" value={{sec}}>
           {{sec}}
       </option>
-  </select><BR>
+  </select>
+    <br>
+    <br>
+    <div ng-app="app" ng-controller="RadioController">
 
+    <label>TEACHER TYPE:</label>
+    <br>
+    <label><input type="radio" name="SGender" ng-change="RadioChange('Male')" ng-model="Gender" value="Male" /> Male </label>
+  <label><input type="radio" name="SGender" ng-change="RadioChange('Female')" ng-model="Gender" value="Female" /> Female </label>
+</div>
 
-
-<label>TEACHER TYPE:</label>
-<br>
-<input type="text" name="Teacher_Type" ngModel><br>
 </div>  </div>
 
 <br>
@@ -112,23 +128,25 @@ padding-top: 10px;
     <table id="customers"  class="container1">
 
         <tr>
-     <th>School_Id</th>
      <th>Teacher_Id</th>
+     <th>Teacher Name </th>
+
         <th>Class</th>
         <th>Section</th>
         <th>Subject</th>
 
         <th>EDIT</th></tr>
- <tr *ngFor="let teachers of teacher"  >
- <td>{{teachers.School_Id}} </td>
+        <tr *ngFor="let teachers of teacher" >
 
- <td>{{teachers.Teacher_Id}}</td>
- <td>{{teachers.Class}}</td>
- <td>{{teachers.Section}}</td>
- <td>{{teachers.Subject}}</td>
+        <td>{{teachers.Teacher_Id}}</td>
+        <td>{{teachers.First_Name}}</td>
+        <td>{{teachers.Class}}</td>
+        <td>{{teachers.Section}}</td>
+        <td>{{teachers.Subject}}</td>
 
- <td><a [routerLink]="['/admindashboard/teacherlist/edit', teachers.Teacher_Id]">EDIT</a></td>
- <!---<td><a href="javascript:void(0)" routerLink="cartoonBoxUrl()" routerLinkActive="active">EDIT</a></td>-->
+
+        <td id="edit"><a [routerLink]="['/admindashboard/teacherlist/edit',teachers._id]"><span class="ti-pencil"></span></a></td>
+<!---<td><a href="javascript:void(0)" routerLink="cartoonBoxUrl()" routerLinkActive="active">EDIT</a></td>-->
 
 
  </tr>

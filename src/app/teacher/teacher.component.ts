@@ -69,7 +69,7 @@ export class TeacherComponent implements OnInit {
           data => {
             this.arrBirds = data as string [];	 // FILL THE ARRAY WITH DATA.
 
-             console.log(this.arrBirds.IP +this.arrBirds.port+"vsjdncv")
+             console.log(this.arrBirds.IP ":"this.arrBirds.port+"vsjdncv")
           },
           (err: HttpErrorResponse) => {
             console.log (err.message);
@@ -93,10 +93,11 @@ export class TeacherComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.form);
+    console.log(this.form.value);
     if (this.form.valid) {
       console.log('form submitted');
       var account=this.form.value;
+      console.log(account)
       var url=this.arrBirds.IP+":"+this.arrBirds.port+"/users5/add"
       this.http.post(url,account).toPromise()
           .then(res => console.log(account,<any[]> res.json()))

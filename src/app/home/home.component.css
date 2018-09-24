@@ -12,14 +12,32 @@ body {
 
 
 }
+.button {
 
-h1 {
-  font-size:3em;
-  font-weight: 300;
-  line-height:1em;
-  text-align: center;
-  color: #4DC3FA;
+  background-color: #1F2739;
+border: none;
+font-size: 20px;
+color: #FFFFFF;
+width: 100px;
+text-align: center;
+-webkit-transition-duration: 0.4s; /* Safari */
+transition-duration: 0.4s;
+text-decoration: none;
+overflow: hidden;
+cursor: pointer;
+  border-radius: 15px;
+
 }
+
+
+.button:active {
+background-color: #3e8e41;
+box-shadow: 0 5px #666;
+transform: translateY(4px);
+}
+
+
+
 
 h2 {
   font-size:1em;
@@ -116,29 +134,7 @@ h2 a {
 .container1 th:nth-child(4) { display: none; }
 }
 
-    .button {
 
-    background-color: #4CAF50;
-    border: none;
-    font-size: 25px;
-    color: #FFFFFF;
-    width: 200px;
-    text-align: center;
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-    text-decoration: none;
-    overflow: hidden;
-    cursor: pointer;
-      border-radius: 15px;
-
-}
-
-
-.button:active {
-  background-color: #3e8e41;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
-}
 .cus{
 padding-left:200px;
 

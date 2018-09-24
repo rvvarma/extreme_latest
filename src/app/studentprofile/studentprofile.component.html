@@ -1,140 +1,236 @@
-<form  #Data = "ngForm" (ngSubmit) = "onSubmit(Data.value)">
 
-<h2>STUDENT  DETAILS</h2>
-
+<h1>STUDENT  DETAILS</h1>
 
 
+<div class="container">
+
+                  <form action=""  #Data = "ngForm" (ngSubmit) = "onSubmit(Data.value)">
 
 <div *ngFor ="let st of stu" >
+
+  <div class="row">
+    <div class="wrapper">
+      <div class="profile">
+        <div class="content">
+  <fieldset>
+
+  <div class="grid-35">
+    <label for="avatar">Your Photo</label>
+             </div>
+             <div class="grid-65">
 <img src="http://13.232.165.2:3000/uploads/{{st.photo}}" ><br>
 <label for="filePicker">Choose a image:</label><br>
-<input type="file" id="filePicker" (change)="handleFileSelect($event)" name="file"  accept="image/jpeg" ngModel>
+<input type="file" id="filePicker" (change)="handleFileSelect( event)" name="file"  accept="image/jpeg" ngModel>
 
-
-<label>studentid</label>
-<inline-input-edit
+</div>
+      </fieldset>
+      <fieldset>
+        <div class="grid-35">
+<label>Student id</label>
+</div>
+        <div class="grid-65">
+          <label> {{st.stid}}</label>
+<!--<inline-input-edit
     [(ngModel)]="st.stid"
     name="stid"
     [required]="true"
-    [prefix]="'<b>$</b>&nbsp;'"
+    [prefix]="'<b> </b>&nbsp;'"
     [changed]="onChange"
     ([value])="l" >
-</inline-input-edit>
+</inline-input-edit>-->
+</div>
+</fieldset>
+<fieldset>
+         <div class="grid-35">
+<label>First Name</label>
+</div>
+<div class="grid-65">
 
-<label>firstname</label>
 <inline-input-edit
 [(ngModel)]="st.firstname"
    name="firstname"
     [required]="true"
-    [prefix]="'<b>$</b>&nbsp;'"
+    [prefix]="'<b> </b>&nbsp;'"
     [changed]="onChange1"
     ([value])="1" ngModel>
 </inline-input-edit>
-
-<label>lastname</label>
+</div>
+</fieldset>
+<fieldset>
+         <div class="grid-35">
+<label>Last Name</label>
+</div>
+<div class="grid-65">
 <inline-input-edit
    [(ngModel)]="st.lastname"
    name="lastname"
     [required]="true"
-    [prefix]="'<b>$</b>&nbsp;'"
+    [prefix]="'<b> </b>&nbsp;'"
     [changed]="onChange2"
     ([value])="1" ngModel>
 </inline-input-edit>
-
+</div>
+</fieldset>
+<!--<fieldset>
+        <div class="grid-35">
 <label>mothername</label>
+</div>
+<div class="grid-65">
 <inline-input-edit
   [(ngModel)]="st.mothername"
    name="mothername"
     [required]="true"
-    [prefix]="'<b>$</b>&nbsp;'"
+    [prefix]="'<b> </b>&nbsp;'"
     [changed]="onChange3"
     ([value])="1" ngModel>
 </inline-input-edit>
-
-<label>fathername</label>
+</div>
+</fieldset>-->
+<fieldset>
+        <div class="grid-35">
+<label>Father Name</label>
+</div>
+<div class="grid-65">
 <inline-input-edit
   [(ngModel)]="st.fathername"
    name="fathername"
     [required]="true"
-    [prefix]="'<b>$</b>&nbsp;'"
+    [prefix]="'<b> </b>&nbsp;'"
     [changed]="onChange4"
     ([value])="1"ngModel >
 </inline-input-edit>
-
+</div>
+</fieldset>
+<!--<fieldset>
+        <div class="grid-35">
 <label>gardian</label>
+</div>
+<div class="grid-65">
+
 <inline-input-edit
   [(ngModel)]="st.guardian"
    name="guardian"
     [required]="true"
-    [prefix]="'<b>$</b>&nbsp;'"
+    [prefix]="'<b> </b>&nbsp;'"
     [changed]="onChange5"
     ([value])="1" ngModel>
 </inline-input-edit>
+</div>
+</fieldset>-->
+<fieldset>
+        <div class="grid-35">
+<label>Date of Birth</label>
+</div>
+<div class="grid-65">
+<inline-input-edit
+  [(ngModel)]="st.dob"
+   name="fathername"
+    [required]="true"
+    [prefix]="'<b></b>&nbsp;'"
+    [changed]="onChange4"
+    ([value])="1"ngModel >
+</inline-input-edit>
+</div>
+</fieldset>
 
-<label>phonenumber</label>
+<fieldset>
+        <div class="grid-35">
+
+<label>Mobile Number</label>
+</div>
+<div class="grid-65">
 <inline-input-edit
   [(ngModel)]="st.phonenumber"
    name="phonenumber"
     [required]="true"
-    [prefix]="'<b>$</b>&nbsp;'"
+    [prefix]="'<b> </b>&nbsp;'"
     [changed]="onChange6"
     ([value])="1" ngModel>
 </inline-input-edit>
-
-<label>emailid</label>
+</div>
+</fieldset>
+<fieldset>
+        <div class="grid-35">
+<label>Email id</label>
+</div>
+<div class="grid-65">
 <inline-input-edit
 [(ngModel)]="st.emailid"
    name="emailid"
     [required]="true"
-    [prefix]="'<b>$</b>&nbsp;'"
+    [prefix]="'<b> </b>&nbsp;'"
     [changed]="onChange7"
     ([value])="1" ngModel>
 </inline-input-edit>
-
-<label>bloogroup</label>
+</div>
+</fieldset>
+<fieldset>
+        <div class="grid-35">
+<label>Blood Group</label>
+</div>
+<div class="grid-65">
 <inline-input-edit
-[(ngModel)]="st.bloogroup"
+  [(ngModel)]="st.bloogroup"
    name="bloogroup"
     [required]="true"
-    [prefix]="'<b>$</b>&nbsp;'"
+    [prefix]="'<b> </b>&nbsp;'"
     [changed]="onChange8"
     ([value])="1" ngModel>
 </inline-input-edit>
-
-<label>address</label>
+</div>
+</fieldset>
+<fieldset>
+        <div class="grid-35">
+<label>Address</label>
+</div>
+<div class="grid-65">
 <inline-input-edit
 [(ngModel)]="st.address"
    name="address"
     [required]="true"
-    [prefix]="'<b>$</b>&nbsp;'"
+    [prefix]="'<b> </b>&nbsp;'"
     [changed]="onChange9"
     ([value])="1" ngModel>
 </inline-input-edit>
-
+</div>
+</fieldset>
+<!--<fieldset>
+        <div class="grid-35">
 <label>School_Id</label>
+</div>
+<div class="grid-65">
 <inline-input-edit
 [(ngModel)]="st.School_Id"
    name="schoolid"
     [required]="true"
-    [prefix]="'<b>$</b>&nbsp;'"
+    [prefix]="'<b> </b>&nbsp;'"
     [changed]="onChange10"
     ([value])="1" ngModel>
 </inline-input-edit>
-
+</div>
+</fieldset>
+<fieldset>
+        <div class="grid-35">
 <label>admissionnumber</label>
+</div>
+<div class="grid-65">
 <inline-input-edit
 [(ngModel)]="st.admissionnumber"
    name="admissionnumber"
     [required]="true"
-    [prefix]="'<b>$</b>&nbsp;'"
+    [prefix]="'<b> </b>&nbsp;'"
     [changed]="onChange10"
     ([value])="1" ngModel>
 </inline-input-edit>
-
-
 </div>
-<!--<button class="btn btn-primary" (click)="onSubmit(st.firstname,st.lastname)">submit1</button>-->
+</fieldset>
+
+<button class="btn btn-primary" (click)="onSubmit(st.firstname,st.lastname)">submit1</button>-->
 
 
-<input type="submit" value="submit">
+<input class="button1" type="submit" value="submit">
+</div>
+</div>
+</div></div></div>
 </form>
+</div>

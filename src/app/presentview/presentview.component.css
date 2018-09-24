@@ -7,12 +7,24 @@ body {
 
 }
 
+
+.btn.orange {
+  background-color: #1F2739;
+}
+
+.btn.orange:hover, .btn.orange:focus {
+  background-color: #1F2739;
+}
+#one{
+align:right;
+background-color: #1F2739;
+color: white;
+}
 h1 {
   font-size:3em;
   font-weight: 300;
   line-height:1em;
   text-align: center;
-  color: #4DC3FA;
 }
 
 h2 {
@@ -40,6 +52,13 @@ h2 a {
 	  font-size: 1em;
   text-align: center;
   color: #f5f5f5;
+}
+.container {
+  position: inherit;
+  margin: 30px;
+  padding: 15px 20px 15px 20px;
+  border-radius: 3px;
+  width:auto;
 }
 
 .container1 td {
@@ -98,28 +117,28 @@ h2 a {
 .container1 th:nth-child(4) { display: none; }
 }
 
-    .button {
+.button {
 
-    background-color: #4CAF50;
-    border: none;
-    font-size: 25px;
-    color: #FFFFFF;
-    width: 200px;
-    text-align: center;
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-    text-decoration: none;
-    overflow: hidden;
-    cursor: pointer;
-      border-radius: 15px;
+background-color: #1F2739;
+border: none;
+font-size: 20px;
+color: #FFFFFF;
+width: 50px;
+text-align: center;
+-webkit-transition-duration: 0.4s; /* Safari */
+transition-duration: 0.4s;
+text-decoration: none;
+overflow: hidden;
+cursor: pointer;
+  border-radius: 15px;
 
 }
 
 
 .button:active {
-  background-color: #3e8e41;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
+background-color: #3e8e41;
+box-shadow: 0 5px #666;
+transform: translateY(4px);
 }
 .cus{
 padding-left:200px;

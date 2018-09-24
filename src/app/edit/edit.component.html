@@ -2,6 +2,14 @@
 
 
 <div class="container ">
+
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a [routerLink]="['/admindashboard/first']">School Configuration</a>
+    </li>
+    <li class="breadcrumb-item active">Edit Configuration</li>
+  </ol>
+
   <h2>Configuration</h2>
 <form #data="ngForm" (ngSubmit)="onSubmit(data.value)" >
   <div class="row">
@@ -34,10 +42,10 @@
    <td><input type="text" value="{{this.teachers}}" name="sections" id="sections"> </td>
 </tr>
 </table>
-<button class="button1" type="button" (click)="addFieldValue()">Add</button>
+<button class="btn btn-success" type="button" (click)="addFieldValue()">Add</button>
 
 
-            <button class="button3"  type="button"  (click)="deleteFieldValue(i)">Delete</button>
+            <button class="btn btn-warning"  type="button"  (click)="deleteFieldValue(i)">Delete</button>
 
 
   <!--<label>SECTION</label>
@@ -96,15 +104,16 @@
 
 
                 </table>
-                   <button class="button1" type="button" (click)="addFieldValues()">Add</button>
-                 <button class="button3"  type="button" (click)="deleteFieldValues(i)">Delete</button>
+                   <button class="btn btn-success" type="button" (click)="addFieldValues()">Add</button>
+                 <button class="btn btn-warning"  type="button" (click)="deleteFieldValues(i)">Delete</button>
 </div>
 </div>
 </div>
 <br>
 <br>
 
-<input class="button4" type="submit" value="update" >
+<input class="button1" type="submit" value="update" >
+<button class="button3" [routerLink]="['/admindashboard/first']" >cancel</button>
 
  </form>
 

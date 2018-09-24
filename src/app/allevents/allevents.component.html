@@ -1,0 +1,59 @@
+<p>
+  allevents works!
+</p>
+
+
+
+<table>
+       <th>Name</th>
+       <th>Type</th>
+       <th>From_Date</th>
+       <th>To_Date</th>
+       <th>Category</th>
+       <th>Description</th>
+       <th>SchoolId</th>
+
+
+
+
+
+
+  <tr *ngFor = "let students of student " >
+
+  <td>{{students.Name}}</td>
+  <td>{{students.Type}}</td>
+  <td>{{students.From_Date}}</td>
+  <td> {{students.To_Date}}
+  <td>{{students.Category}}</td>
+  <td>{{students.Description}}</td>
+  <td>{{students.SchoolId}}</td>
+
+</tr>
+
+<tr *ngFor = "let students of stu " >
+
+<td>{{students.Name}}</td>
+<td>{{students.Type}}</td>
+<td>{{students.From_Date}}</td>
+<td> {{students.To_Date}}
+<td>{{students.Category}}</td>
+<td>{{students.Description}}</td>
+<td>{{students.SchoolId}}</td>
+
+</tr>
+
+
+<tr *ngFor = "let students of st " >
+
+<td>{{students.Name}}</td>
+<td>{{students.Type}}</td>
+<td>{{students.From_Date}}</td>
+<td> {{students.To_Date}}
+<td>{{students.Category}}</td>
+<td>{{students.Description}}</td>
+<td>{{students.SchoolId}}</td>
+
+</tr>
+
+
+</table>

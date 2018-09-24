@@ -1,6 +1,6 @@
 
 <div class="container">
-  <h2 >Student Registrations </h2>
+  <h1>Student Registrations </h1>
 
 
 <form class="form-horizontal" [formGroup]="form">
@@ -12,26 +12,45 @@
 
 
 
-  <div class="form-group" [ngClass]="displayFieldCss('std')">
-    <div class="col-sm-3  ">
-      <label for="std" >Student ID</label>
-      <input type="text" id="std" class="form-control" formControlName="std">
-      <app-field-error-display [displayError]="isFieldValid('std')" errorMsg="Please inform Student ID">
-      </app-field-error-display>
-    </div>
-  </div>
+                                <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+                                <div class="form-group">
+                                <div class="col-sm-7">
+
+                                 <label for="name"> First Name</label>
+                                 <input type="text" class="form-control" id="name"
+                                 required
+                                 pattern="[a-zA-Z][a-zA-Z ]+"
+                                 [(ngModel)]="model.name" name="name"
+                                 #name="ngModel">
+                                 <div [hidden]="name.valid || name.pristine"
+                                    class="alert alert-danger">
+                                    <div [hidden]="!name.hasError('required')">Name is required</div>
+                                    <div [hidden]="!name.hasError('pattern')">Only alphabets are allowed</div>
+                                 </div>
+                                </div>
+                                </div>
+                                </form>
+
+
+
+
 
 
 
     <div class="form-group">
 
-      <div class="col-md-3  " [ngClass]="displayFieldCss('name')">
-        <label for="name" > Name</label>
-        <input type="text" id="name" class="form-control" formControlName="name">
-        <app-field-error-display [displayError]="isFieldValid('name')" errorMsg="Please inform Parent Name">
+      <div class="col-md-3  " [ngClass]="displayFieldCss('lastname')">
+        <label for="lastname" > Last Name</label>
+        <input type="text" id="lastname" class="form-control" formControlName="lastname">
+        <app-field-error-display [displayError]="isFieldValid('lastname')" errorMsg="Please inform Last Name">
         </app-field-error-display>
       </div>
     </div>
+
+
+
+
+
     <div class="form-group" [ngClass]="displayFieldCss('parent')">
 
     <div class="col-sm-3  ">
@@ -52,7 +71,27 @@
 
                      </div>
                    </div>
+                  <label> Parent Name :</label>
+                   <div class="form-group">
 
+                     <div class="col-md-3  " [ngClass]="displayFieldCss('parent_name')">
+                       <label for="parent_name" >First Name </label>
+                       <input type="text" placeholder="First Name" id="parent_name" class="form-control" formControlName="parent_name">
+                       <app-field-error-display [displayError]="isFieldValid('parent_name')" errorMsg="Please inform Parent first Name">
+                       </app-field-error-display>
+                     </div>
+                   </div>
+
+
+                   <div class="form-group">
+
+                       <div class="col-md-3  " [ngClass]="displayFieldCss('parentlastname')">
+                         <label for="parentlastname" >Last Name  </label>
+                         <input type="text"placeholder="Last Name" id="parentlastname" class="form-control" formControlName="parentlastname">
+                         <app-field-error-display [displayError]="isFieldValid('parentlastname')" errorMsg="Please informs Last Name">
+                         </app-field-error-display>
+                       </div>
+                     </div>
 
                  </div >  </div>
 
@@ -61,30 +100,41 @@
   <div class="form-group" [ngClass]="displayFieldCss('email')">
     <div class="col-sm-2  ">
       <label for="email" >Email  ID</label>
-      <input type="text" id="email" class="form-control" formControlName="email">
+      <input type="text" placeholder="e-mail id" id="email" class="form-control" formControlName="email">
       <app-field-error-display [displayError]="isFieldValid('email')" errorMsg="Please inform email ID">
       </app-field-error-display>
     </div>
   </div>
 
-  <div class="form-group" [ngClass]="displayFieldCss('parent_name')">
-    <div class="col-sm-3  ">
-      <label for="parent_name" >Parent Name</label>
-      <input type="text" id="parent_name" class="form-control" formControlName="parent_name">
-      <app-field-error-display [displayError]="isFieldValid('parent_name')" errorMsg="Please inform email ID">
+  <div class="form-group" [ngClass]="displayFieldCss('dob')">
+    <div class="col-sm-10   ">
+      <label for="dob" >Date of Birth</label>
+      <input type="date" id="dob" class="form-control" formControlName="dob">
+      <app-field-error-display [displayError]="isFieldValid('dob')" errorMsg="Please inform Date of birth">
       </app-field-error-display>
     </div>
   </div>
-
+  <div class="form-group" [ngClass]="displayFieldCss('address')">
+    <div class="col-sm-3  ">
+      <label for="address" >Address</label>
+      <input type="text"  placeholder="address" id="address" class="form-control" formControlName="address">
+      <app-field-error-display [displayError]="isFieldValid('address')" errorMsg="Please inform address">
+      </app-field-error-display>
+    </div>
+  </div>
   <div class="form-group " [ngClass]="displayFieldCss('phone_number')">
     <div class="col-sm-3  ">
-      <label for="phone_number" >Phone Number</label>
-      <input type="text" id="phone_number" class="form-control" formControlName="phone_number">
+      <label for="phone_number" >Mobile No</label>
+      <input type="text" placeholder="mobile number" id="phone_number" class="form-control" formControlName="phone_number">
       <app-field-error-display [displayError]="isFieldValid('phone_number')" errorMsg="Please inform Phone Number">
       </app-field-error-display>
     </div>
   </div>
+  <div class="col-sm-3  ">
+    <label for="phone_number" >Phone No </label>
+    <input type="text" placeholder="phone number" id="phone_number"placeholder="optonal" class="form-control" formControlName="phone_number">
 
+  </div>
 
 </div>
 </div>

@@ -1,6 +1,4 @@
-<div class="total">
-<h2 >School Name </h2>
-</div>
+<h1>Attendance </h1>
 
 <form #f = "ngForm" (ngSubmit) = "onClickSubmit(f.value)" >
 
@@ -27,12 +25,14 @@ Class:
 
 
 
-      <div> <img src="../assets/img2.png">
-        <p>{{st.studentid}}</p>
+      <div> <img src="../assets/img2">
+        <h1>{{st.stid}}</h1><br>
+        <h2>{{st.name}}</h2>
+
 
 
 <label>
- <input type="checkbox" value="Present" name="attendance" id="check"   (change)=onSub($event,st.studentid) checked >
+ <input type="checkbox" value="Present" name="attendance" id="check"   (change)=onSub($event,st.stid) checked >
 Present</label>&nbsp;
 
       </div>

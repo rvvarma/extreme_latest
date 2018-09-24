@@ -1,0 +1,132 @@
+<p>
+  eventsui works!
+</p>
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial;}
+
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 5px 5px;
+    transition: 0.3s;
+    font-size: 5px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 5px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+</style>
+</head>
+<body>
+
+
+<div class="tab">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+
+<button class="btn btn-success pull-right" ><a routerLink="/eventsui">Events Details</a></button>
+<button class="btn btn-success pull-right" ><a routerLink="/events">Event List</a></button>
+        </li>
+
+      </ol>
+</div>
+<br>
+<br>
+<div class="content">
+
+
+
+
+
+
+
+<form  #Data = "ngForm" (ngSubmit) = "onSubmit(Data.value)">
+  <div class="row">
+          <div class="col-50">
+
+
+<label>CLASS</label>
+            <select (change)="fetchsection($event.target.value)" name="Class" id="class" ngModel="classes" >
+                <option value="0">CLASSES</option>
+                <option *ngFor="let cla of student" value={{cla}}>
+                    {{cla}}
+                </option>
+            </select>&nbsp;
+
+
+            <label>SECTION:</label>
+            <select (change)="fetchsection($event.target.value)" name="Section" id="section" ngModel="sections">
+                <option value="0">SECTIONS</option>
+                <option *ngFor="let sec of section" value={{sec}} >
+                    {{sec}}
+                </option>
+            </select>&nbsp;
+
+
+
+<label>Parent Type
+  <select name="Type" id="PType" ngModel>
+      <option value=option>EventType<option>
+          <option name="Holiday" value=holidays >Holiday</option>
+              <option value=events>Events</option>
+      <option value=exams>Exams</option>
+     </select>
+</label><br><br>
+
+
+
+
+
+
+
+
+  <label>Description:</label>
+  <textarea ng-model="myTextarea"  name="dest" id="description" ngModel></textarea><br>
+
+
+  <div>
+            <label for="filePicker">Choose a file:</label><br>
+            <input type="file" id="filePicker" (change)="handleFileSelect($event)" name="file"  accept="image/jpeg" ngModel>
+        </div>
+
+<label>Date:</label><input id="date"name="date" type="date" ngModel><br>
+
+<input type="submit" value="submit">
+
+</div>
+</div>
+
+
+</form>

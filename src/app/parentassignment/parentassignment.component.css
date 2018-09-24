@@ -7,12 +7,13 @@ body {
 
 }
 
+
+
 h1 {
   font-size:3em;
   font-weight: 300;
   line-height:1em;
   text-align: center;
-  color: #4DC3FA;
 }
 
 h2 {
@@ -100,11 +101,11 @@ h2 a {
 
     .button {
 
-    background-color: #4CAF50;
+    background-color: #1F2739;
     border: none;
-    font-size: 25px;
+    font-size: 20px;
     color: #FFFFFF;
-    width: 200px;
+    width: 50px;
     text-align: center;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;

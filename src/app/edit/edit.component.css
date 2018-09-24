@@ -13,16 +13,19 @@ padding-right:  200px;
 font-weight: bold;
 font-style: oblique;
 }
+
 .button3 {
     background-color:  #f44336;
     color: white;
     border: 2px solid #f44336;
+    width: 20%;
     border-radius: 3px;
     cursor: pointer;
     font-size: 17px;
     position:relative;
     padding: 12px 32px;
 
+    left:350px;
 }
 
 .button3:hover {
@@ -33,10 +36,12 @@ font-style: oblique;
     background-color:#4CAF50 ;
     color: White;
     border: 2px solid #4CAF50;
+    width: 20%;
     border-radius: 3px;
     cursor: pointer;
     font-size: 17px;
-    position:center;
+    position:relative;
+    left:250px;
     padding: 12px 32px;
 
 }
@@ -45,6 +50,7 @@ font-style: oblique;
     background-color:white ;
     color: #4CAF50;
 }
+
 
 .row {
   display: -ms-flexbox; /* IE10 */
@@ -82,22 +88,4 @@ input[type=text] {
 .col-50,
 .col-75 {
   padding: 0 16px;
-}
-.button4 {
-    background-color:#4CAF50 ;
-    color: White;
-    border: 2px solid #4CAF50;
-    width: 20%;
-    border-radius: 3px;
-    cursor: pointer;
-    font-size: 17px;
-    position:relative;
-    left:250px;
-    padding: 12px 32px;
-
-}
-
-.button4:hover {
-    background-color:white ;
-    color: #4CAF50;
 }

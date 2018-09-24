@@ -43,13 +43,6 @@ body {font-family: Arial;}
 }
 
 
-h1 {
-  font-size:3em;
-  font-weight: 300;
-  line-height:1em;
-  text-align: center;
-  color: #4DC3FA;
-}
 
 .row {
   display: -ms-flexbox; /* IE10 */
@@ -62,10 +55,6 @@ margin: 20px;}
 </head>
 <body>
 
-<ol class="breadcrumb">
-
-  <li class="breadcrumb-item active">Class Details</li>
-</ol>
 
 <div class="content">
 
@@ -75,7 +64,7 @@ margin: 20px;}
 
 
 <div class="row">
-<label>CLASS </label>
+<label>Class : </label>
 <select (change)="fetchsection($event.target.value)" name="Class" id="class" ngModel>
 
       <option value="0">CLASSES</option>
@@ -85,7 +74,7 @@ margin: 20px;}
   </select>&nbsp;
 
 
-  <label>SECTION</label>
+  <label>Section :</label>
   <select  name="Section" id="section" ngModel>
       <option value="0">SECTIONS</option>
       <option *ngFor="let sections of section" value={{sections}}>
@@ -96,8 +85,8 @@ margin: 20px;}
 
 
 <div class="tab">
-  <button (click)="openCity('event', 'London','class','section');">TEACHER DETAILS</button>
-  <button (click)="openCity('event', 'Paris','class','section');" (click)="openLock('class','section');">STUDENT LIST</button></div>
+  <button (click)="openCity('event', 'London','class','section');">Teacher Details</button>
+  <button (click)="openCity('event', 'Paris','class','section');" (click)="openLock('class','section');">Student Details</button></div>
   <div id="London" class="tabcontent">
 
   <table id="customers" class="container1">
@@ -120,10 +109,19 @@ margin: 20px;}
   <table id="customers" class="container1">
     <tr>
       <th>STUDENT ID</th>
+      <th> Name    </th>
+      <th>  Phone number </th>
+      <th>  Email-id </th>
+
+
+
     </tr>
     <tr *ngFor="let teachers of stu"  >
 
-      <td >{{teachers.studentid}}</td>
+      <td>{{teachers.stid}}</td>
+      <td>{{teachers.name}}</td>
+      <td>{{teachers.phonenumber}}</td>
+      <td>{{teachers.mailid}}</td>
       </tr>
 
   </table>

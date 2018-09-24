@@ -48,8 +48,8 @@ export class StudentprofileComponent implements OnInit {
         "bloogroup":data.bloogroup,
         "address":data.address,
         "School_Id":data.schoolid,
-        "phototype":this.filetype1
-
+        "phototype":this.filetype1,
+"dob":this.filetype1
 
       }
       console.log(JSON.stringify(tt))
@@ -145,8 +145,6 @@ console.log(url)
    this.stu.push(a11)
    }
      })
-
-   }
 
   }
 

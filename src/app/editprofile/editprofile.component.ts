@@ -34,7 +34,7 @@ id:any
   mailid:any;
   s1:any;
   filetype1:any;
-  sub=[]
+  sub:any;
   sub1=[]
   myFiles=[]
   d:any
@@ -242,6 +242,8 @@ id:any
      lastname:data[i].Last_Name,
      id:data[i].Teacher_Id,
      experience:data[i].Experience,
+     Qualification:data[i].Experience,
+     teachingsubject:data[i].Experience,
      address:data[i].Address,
      phonenumber:data[i].Phone_Number,
      age:data[i].Age,
@@ -249,13 +251,13 @@ id:any
      image:data[i].image
 
    }
-  this.sub.push(a11)
+  this.sub=a11
 
-   console.log(data[i].image+"d")
-
+//   console.log(data[i].image+"d")
+//
  }
 
- console.log(this.sub)
+ console.log(JSON.stringify(this.sub))
  })
 })
  }

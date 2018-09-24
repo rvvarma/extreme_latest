@@ -10,14 +10,37 @@ import {
   FormControl
 } from '@angular/forms';
 
+
+import { Directive, forwardRef, Attribute,OnChanges, SimpleChanges,Input } from '@angular/core';
+import { NG_VALIDATORS,Validator,Validators,AbstractControl,ValidatorFn } from '@angular/forms';
+import { User }    from './user';
+
+
+
 @Component({
+  moduleId: module.id
   selector: 'app-account',
   templateUrl: './account.component.html',
   styleUrls: ['./account.component.css']
 })
 export class AccountComponent implements OnInit {
-  form: FormGroup;
 
+  powers = ['Really Smart', 'Super Flexible',
+            'Super Hot', 'Weather Changer'];
+  model = new User('','',null,'','','');
+  submitted = false;
+  onSubmit( { this.submitted = true; })
+  newHero() {
+   // this.model = new User('','');
+  }
+
+
+
+
+  form: FormGroup;
+  loginForm: ngForm;
+
+//
 
     constructor(private formBuilder: FormBuilder,private router: Router,private activatedRoute: ActivatedRoute,private http: Http,private httpService: HttpClient) {
       }
@@ -52,14 +75,15 @@ export class AccountComponent implements OnInit {
   ngOnInit() {
     this.form = this.formBuilder.group({
       parent: [null, Validators.required],
-      std: [null, Validators.required],
+//      std: [null, Validators.required],
       name: [null, Validators.required],
+      lastname: [null, Validators.required],
       email: [null, [Validators.required, Validators.email]],
       phone_number: [null, Validators.required],
       parent_name: [null, Validators.required],
-
-
-
+ parentlastname:[null, Validators.required],
+address:[null, Validators.required],
+dob:[null, Validators.required]
 
     });
 

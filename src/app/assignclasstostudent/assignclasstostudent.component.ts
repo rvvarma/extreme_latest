@@ -1,5 +1,6 @@
 
 
+
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { RouterModule, ActivatedRoute, Params} from '@angular/router';
@@ -45,9 +46,12 @@ console.log("sdfcdsa "+this.student)
 
 
 
-addProduct = function(student) {
+addProduct = function(student,name,phonenumber,mailid) {
+
+alert(student,name,phonenumber,mailid)
 
 console.log("ioif"+ student)
+
 
 
 
@@ -63,12 +67,24 @@ console.log("vsvdsv"+ x)
 console.log("yy" + y)
 
 console.log("uu" + k)
+
+
+
 var k={
- studentid:student,
+ stid:student,
+
+
+
 
         class: x,
         section:y,
-        year:2018
+        year:2019,
+        mailid:mailid,
+        phonenumber:phonenumber,
+        name:name
+
+
+
 
 }
 

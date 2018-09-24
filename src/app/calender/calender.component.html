@@ -1,6 +1,7 @@
-
-<p  style="margin-left:500px"> Display event : {{displayEvent | json}}</p>
-<div *ngIf="calendarOptions" style="margin-left:300px;margin-right:150px;margin-top:30px">
+<div class="container">
+<p  align="center"> Display event : {{displayEvent | json}}</p>
+<div class="size" *ngIf="calendarOptions" align="center"  style="margin:50px;">
   <ng-fullcalendar #ucCalendar [options]="calendarOptions" (eventClick)="eventClick($event.detail)" (eventDrop)="updateEvent($event.detail)"
                    (eventResize)="updateEvent($event.detail)" (clickButton)="clickButton($event.detail)"></ng-fullcalendar>
+</div>
 </div>

@@ -185,7 +185,7 @@ private headers =new Headers({'ContentType':'application/json'})
      this.http.get(url).subscribe (
        (res:Response) =>{
          this.teacher=res.json();
-           // var teacherslist=this.teacher[0].First_Name;
+           var teacherslist=this.teacher[0].First_Name;
          console.log(this.teacher)
 
 

@@ -40,15 +40,15 @@ getCookie(key:string){
           console.log(res1);
           var res2 = cls.charAt(1)
             console.log(res2);
-            var url=this.arrBirds.IP +":"+this.arrBirds.port+"/filter"+"/"+res1+"/"+res2
+            var url=this.arrBirds.IP +":"+this.arrBirds.port+"/filter/"+res1+"/"+res2
     console.log(url)
 
             this.http.get(url).subscribe(
               (res:Response)=>{
               this.stu=res.json();
               for(var i in this.stu){
-this.hash[this.stu[i].studentid]="Present"
-       console.log(this.stu[i].studentid)
+this.hash[this.stu[i].stid]="Present"
+       console.log(this.stu[i].stid)
 }
               console.log(res.json());
 
@@ -63,7 +63,7 @@ this.hash[this.stu[i].studentid]="Present"
            this.arrBirds = data as string [];	 // FILL THE ARRAY WITH DATA.
            this.id = this.getCookie("Id");
 
-            var url=this.arrBirds.IP +":"+this.arrBirds.port+"/users1/class"+"/"+this.id
+            var url=this.arrBirds.IP +":"+this.arrBirds.port+"/users1/class/"+this.id
             console.log(url)
 
         console.log(this.id);

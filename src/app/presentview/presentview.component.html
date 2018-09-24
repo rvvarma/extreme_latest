@@ -1,14 +1,21 @@
-<ol class="breadcrumb">
+<h1>  Assignment List   </h1>
+<div class="container">
 
-  <li class="breadcrumb-item active">Assignments List</li>
-</ol>
-<button [routerLink]="['/teacherdashboard/assignment']"> NewAssignments</button>
+<br>
+<div class="col-md-8">
+
+<label>Date:</label><input id="date" type="date" ngModel>
+
+
+  <button class="button" (click)="GetAssignments('date')"> <span class="glyphicon glyphicon-search
+"></span></button>
+&nbsp;&nbsp;
+&nbsp;
+
+<button id="one" class=" pull-right" [routerLink]="['/teacherdashboard/assignment']"><span class="glyphicon glyphicon-plus"></span> New Assignments  </button>
+</div>
 <br>
 <br>
-<label>Date:</label><input id="date" type="date" ngModel><br>
-
-
-  <button (click)="GetAssignments('date')">Get Assignments</button>
 
 <table class="container1">
   <thead>
@@ -20,9 +27,7 @@
    <th>subject</th>
    <th>title</th>
    <th>description</th>
-   <th>file</th>
-   <th>filetype</th>
-   <th>    files   </th>
+   <th>   files  </th>
 
 
  </thead>
@@ -36,12 +41,12 @@
   <td>{{a.class}}</td>
   <td>{{a.section}}</td>
   <td>{{a.subject}}</td>
-  <td>{{a.description}}</td>
   <td>{{a.title}}</td>
-  <td>{{a.filetype}}</td>
+  <td>{{a.description}}</td>
   <td><button class="btn btn-success" (click)="downloadFile(a.id)">        <span class="glyphicon glyphicon-download-alt"></span></button>
  </td>
 
   </tr>
 </tbody>
 </table>
+</div>

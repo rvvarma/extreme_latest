@@ -46,14 +46,7 @@ tr
     font-weight: bold;
     font-style: oblique;
     }
-    H1{
-      text-align: center;
-      font-size: 75px;
-      font-weight: bolder;
-      font-style: italic;
-      margin-top: 70px;
-
-    }
+    
     * {
       box-sizing: border-box;
     }
@@ -136,7 +129,7 @@ tr
     .btn:hover {
       background-color: white;
       color: #4CAF50;
-      
+
     }
 
     a {

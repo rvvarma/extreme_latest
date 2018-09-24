@@ -12,6 +12,9 @@ padding-right:  200px;
 font-weight: bold;
 font-style: oblique;
 }
+label{
+text-align: center;
+}
 .button3 {
     background-color:  #f44336;
     color: white;
@@ -71,6 +74,13 @@ font-style: oblique;
 
 
 input[type=text] {
+  width: 350px;
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+input[type=date] {
   width: 350px;
   margin-bottom: 20px;
   padding: 20px;

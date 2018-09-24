@@ -53,6 +53,7 @@ import { AdminDetailsComponent } from './admin-details/admin-details.component';
 import { AdminPasswordComponent } from './admin-password/admin-password.component';
 import { StudentDetailsFeePaymentComponent } from './student-details-fee-payment/student-details-fee-payment.component';
 import { RegistraionComponent } from './registraion/registraion.component';
+import { UserComponent } from './user/user.component';
 
 
 
@@ -83,6 +84,9 @@ import { EditprofileComponent } from './editprofile/editprofile.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InlineEditModule } from '@savantly/ngx-inline-edit';
 import { StudentprofileComponent } from './studentprofile/studentprofile.component';
+import { EventsuiComponent } from './eventsui/eventsui.component';
+import { EventsComponent } from './events/events.component';
+import { AlleventsComponent } from './allevents/allevents.component';
 
 
 
@@ -222,6 +226,10 @@ path: 'teacherdashboard',
                   {
                       path:'studentprofile',component: StudentprofileComponent
                   },
+                  {
+                    path:'user'
+                    ,component: UserComponent
+                  },
 
 
             ]
@@ -281,7 +289,13 @@ path: 'teacherdashboard',
 
     EditprofileComponent,
 
-    StudentprofileComponent
+    StudentprofileComponent,
+
+    EventsuiComponent,
+
+    EventsComponent,
+UserComponent,
+    AlleventsComponent
 
 
     ],
@@ -321,6 +335,10 @@ path: 'teacherdashboard',
       ,{
         path:'admin/teacherlist'
         ,component: AssignTeacherClassListComponent
+      },
+      {
+        path:'user'
+        ,component: UserComponent
       },
       {
         path:'checkemail'
@@ -477,7 +495,18 @@ path: 'teacherdashboard',
               {
                       path:'admindash', component:ADashboardComponent
                     },
-        {
+
+                    {
+                    path: "eventsui" component:EventsuiComponent
+                  },
+
+                  {
+                  path: "events" component:EventsComponent
+                  },
+                  {
+                  path: "allevents" component:AlleventsComponent
+                  },
+         {
           path:'registrations', component:RegistraionComponent
         }
 
